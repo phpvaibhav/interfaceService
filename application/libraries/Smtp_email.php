@@ -6,11 +6,11 @@ use PHPMailer\PHPMailer\Exception;
 
 class Smtp_email{
 
-    var $host = 'outthinkcoders.com', //server hostname
-    $user_name = 'no-reply@outthinkcoders.com', 
-    $from_mail = 'no-reply@outthinkcoders.com', //email a/c username
-    $pwd = 'EsEyCb7Tii2K', // email a/c password
-    $port = 465, //or 25(depends or server email configuration)
+    var $host = 'service.audiensservicepartner.com', //server hostname
+    $user_name = 'no-reply@audiensservicepartner.com', 
+    $from_mail = 'no-reply@audiensservicepartner.com', //email a/c username
+    $pwd = 'qCAxap0oaKWE', // email a/c password
+    $port = 587, //465(ssl), //or 25(depends or server email configuration)
     $from_name = SITE_NAME;
 
 
