@@ -39,8 +39,8 @@
                   </section>
                 </fieldset>
                 <footer>
-                  <button type="submit" id="submit" class="btn btn-primary">
-                    Sign in
+                  <button type="submit" id="submit" class="btn btn-warning fontClass">
+                    Login
                   </button>
                 </footer>
               </form>

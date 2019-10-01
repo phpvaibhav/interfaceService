@@ -66,7 +66,7 @@
 			
 			</fieldset>
 			<footer>
-				<button type="submit" id="submit" class="btn btn-primary">
+				<button type="submit" id="submit" class="btn btn-warning fontClass">
 					Register
 				</button>
 			</footer>

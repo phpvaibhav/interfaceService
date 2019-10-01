@@ -34,7 +34,7 @@ class Admin extends Common_Back_Controller {
         $this->admin_logout(FALSE);
         $this->session->set_flashdata('success', 'Sign out successfully done! ');
         $response = array('status' => 1);
-        redirect(base_url());
+        redirect('https://audiensservicepartner.com/');
         echo json_encode($response);
         die;
     }

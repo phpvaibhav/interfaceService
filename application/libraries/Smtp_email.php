@@ -10,7 +10,7 @@ class Smtp_email{
     $user_name = 'no-reply@audiensservicepartner.com', 
     $from_mail = 'no-reply@audiensservicepartner.com', //email a/c username
     $pwd = 'qCAxap0oaKWE', // email a/c password
-    $port = 587, //465(ssl), //or 25(depends or server email configuration)
+    $port = 465, //465(ssl), //or 25(depends or server email configuration)
     $from_name = SITE_NAME;
 
 
@@ -19,13 +19,13 @@ class Smtp_email{
         $mail = new PHPMailer(true); // Passing `true` enables exceptions
         try {
         //Server settings
-       // $mail->SMTPDebug = 2; // Enable verbose debug output
+        $mail->SMTPDebug = 2; // Enable verbose debug output
         $mail->isSMTP(); // Set mailer to use SMTP
         $mail->Host = $this->host;; // Specify main and backup SMTP servers
         $mail->SMTPAuth = true; // Enable SMTP authentication
         $mail->Username = $this->user_name; // SMTP username
         $mail->Password = $this->pwd; // SMTP password
-        $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
+        $mail->SMTPSecure = 'tls'; // Enable TLS encryption, `ssl` also accepted
         $mail->Port = $this->port; // TCP port to connect to
         $mail->SMTPOptions = array(
             'ssl' => array(

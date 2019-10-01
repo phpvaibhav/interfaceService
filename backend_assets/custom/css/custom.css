@@ -1,6 +1,9 @@
 .error {
     color: red;
 }
+.fontClass {
+    font-weight: 700!important;
+}
 /*--preloader--*/
 /*.preloader {
     background-color: #fff;
