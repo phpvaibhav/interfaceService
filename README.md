@@ -1,0 +1,2 @@
+# interfaceService
+interface Service
