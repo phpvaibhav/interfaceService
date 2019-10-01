@@ -25,7 +25,7 @@ class Smtp_email{
         $mail->SMTPAuth = true; // Enable SMTP authentication
         $mail->Username = $this->user_name; // SMTP username
         $mail->Password = $this->pwd; // SMTP password
-        $mail->SMTPSecure = 'tls'; // Enable TLS encryption, `ssl` also accepted
+        $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
         $mail->Port = $this->port; // TCP port to connect to
         $mail->SMTPOptions = array(
             'ssl' => array(

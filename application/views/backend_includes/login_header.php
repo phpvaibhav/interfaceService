@@ -39,6 +39,12 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 <!-- custom -->
 <link rel="stylesheet" type="text/css" href="<?php echo $backend_assets; ?>custom/css/custom.css">
+<style type="text/css">
+  #extr-page #header #logo {
+    margin-top: 22px;
+    margin-left: 105px;
+}
+</style>
   </head>
   <body class="animated fadeInDown" data-base-url="<?php echo base_url(); ?>">
  <!-- #preloader -->
