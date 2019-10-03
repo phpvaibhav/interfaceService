@@ -24,7 +24,7 @@
 				-->
 				<header>
 					<span class="widget-icon"> <i class="fa fa-cog"></i> </span>
-					<h2>Serivce</h2>
+					<h2>Service</h2>
 
 				</header>
 
