@@ -69,7 +69,7 @@
 										<h1>
 											<?php for ($i=0; $i <sizeof($name) ; $i++) { 
 												if($i==0){
-													echo $name[0];
+													echo $name[0].' ';
 												}else{
 													echo '<span class="semi-bold">'.$name[1].'</span>';
 												}
@@ -284,14 +284,14 @@
 									</label>
 								</section> -->
 <section>
-					<label class="label">Shipping Address<span class="error">*</span></label>
+					<label class="label">Shipping Address</label>
 					<label class="input"> <i class="icon-append fa fa-location-arrow"></i>
 					<input type="text" name="shippingAddress" value="<?php echo $userData['shippingAddress']; ?>" maxlength="50" size="50" class="" placeholder="Shipping Address" >
 					<b class="tooltip tooltip-bottom-right">Please enter your shipping address</b> </label>
 				</section>
 
 				<section>
-					<label class="label">VAT Number<span class="error">*</span></label>
+					<label class="label">VAT Number</label>
 					<label class="input"> <i class="icon-append fa fa-list"></i>
 					<input type="text" name="vatNumber" value="<?php echo $userData['vatNumber']; ?>" maxlength="50" size="50" class="" placeholder="VAT Number" >
 					<b class="tooltip tooltip-bottom-right">Please enter your vat Number</b> </label>
