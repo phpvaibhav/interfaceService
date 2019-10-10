@@ -127,7 +127,7 @@ class Service extends Common_Service_Controller{
         $row[] = display_placeholder_text($serData->serialNumber); 
         $row[] = display_placeholder_text($serData->purchaseDate); 
         $row[] = display_placeholder_text($serData->contactNumber); 
-        $row[] = display_placeholder_text(substr($serData->faultdescription,0,75)).'...'; 
+        $row[] = display_placeholder_text(substr($serData->faultdescription,0,75)); 
  
          $applyStatus = 1;
             $applyMsg = "";

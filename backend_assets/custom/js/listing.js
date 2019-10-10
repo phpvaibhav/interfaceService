@@ -8,11 +8,11 @@
               "order": [], //Initial no order.
                "lengthChange": false,
               "oLanguage": {
-               "sEmptyTable" : '<center>No serivce found</center>',
+               "sEmptyTable" : '<center>No service found</center>',
                 "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>' 
               },
                "oLanguage": {
-               "sZeroRecords" : '<center>No serivce found</center>',
+               "sZeroRecords" : '<center>No service found</center>',
                  "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>' 
               },
                initComplete: function () {
