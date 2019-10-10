@@ -51,10 +51,10 @@ class Service extends Common_Back_Controller {
 
       // set document information
       $pdf->SetCreator(PDF_CREATOR);
-      $pdf->SetAuthor('Interface');
+      $pdf->SetAuthor(SITE_NAME);
       $pdf->SetTitle('Service Information');
-      $pdf->SetSubject('Interface');
-      $pdf->SetKeywords('Interface,service');
+      $pdf->SetSubject(SITE_NAME);
+      $pdf->SetKeywords(SITE_NAME.',service');
 
       // set default header data
       //$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.'', PDF_HEADER_STRING);
@@ -198,10 +198,10 @@ class Service extends Common_Back_Controller {
 
       // set document information
       $pdf->SetCreator(PDF_CREATOR);
-      $pdf->SetAuthor('Interface');
+      $pdf->SetAuthor(SITE_NAME);
       $pdf->SetTitle('Service Information');
-      $pdf->SetSubject('Interface');
-      $pdf->SetKeywords('Interface,service');
+      $pdf->SetSubject(SITE_NAME);
+      $pdf->SetKeywords(SITE_NAME.',service');
 
       // set default header data
       //$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.'', PDF_HEADER_STRING);

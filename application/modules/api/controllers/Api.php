@@ -77,7 +77,7 @@ class Api extends Common_Service_Controller{
                     case "NR": // Normal registration
                     $this->StoreSession($result['returnData']);
                     //send mail
-                        $maildata['title']    = $result['returnData']->fullName." been invited to join Interface service";
+                        $maildata['title']    = $result['returnData']->fullName." been invited to join ".SITE_NAME;
                         $maildata['message']  = "<table><tr><td>Name</td><td>".$result['returnData']->fullName."</td></tr><tr><td>Email</td><td>".$result['returnData']->email."</td></tr></table>";
                         $subject = "Create customer";
                         $message=$this->load->view('emails/email',$maildata,TRUE);

@@ -105,9 +105,9 @@ define('USER_AVATAR_PATH', 'uploads/users/'); //user avatar
 define('USER_DEFAULT_AVATAR', 'backend_assets/img/avatars/1.png'); //user placeholder image
 
 //Title, Site name, Copyright etc
-define('SITE_NAME','InterFace'); //your project name
-define('COPYRIGHT','&copy; ' . date('Y') . ', InterFace. All rights reserved.');
-define('INFO_EMAIL','info@project.com'); //your project name
+define('SITE_NAME','Audiens Service Partner'); //your project name
+define('COPYRIGHT','&copy; ' . date('Y') . ', Audiens Service Partner. All rights reserved.');
+define('INFO_EMAIL','info@audiensservicepartner.com'); //your project name
 
 
 //common messages

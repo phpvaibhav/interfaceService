@@ -81,7 +81,7 @@ class Service extends Common_Service_Controller{
                endif;//images
                 //email send
                                         //send mail
-                        $maildata['title']    = $this->authData->fullName." has been  created Interface service";
+                        $maildata['title']    = $this->authData->fullName." has been  created ".SITE_NAME;
                         $maildata['message']  = "<table><tr><td>Product</td><td>".$data_val['productName']."</td></tr><tr><td>Manufacture</td><td>".$data_val['vendor']."</td></tr><tr><td>Serial number</td><td>".$data_val['serialNumber']."</td></tr><tr><td>Date of Purchase</td><td>".$purchaseDate."</td></tr><tr><td>Contact number</td><td>".$data_val['contactNumber']."</td></tr><tr><td>Fault Description</td><td>".$data_val['faultDescription']."</td></tr></table>";
                         $subject = "Service Request";
                         $message=$this->load->view('emails/email',$maildata,TRUE);
