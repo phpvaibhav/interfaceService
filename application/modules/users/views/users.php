@@ -23,7 +23,7 @@
 				-->
 				<header>
 					<span class="widget-icon"> <i class="fa fa-users"></i> </span>
-					<h2>Users</h2>
+					<h2><?= lang('Users');?></h2>
 
 				</header>
 
@@ -46,13 +46,13 @@
 								<thead>			                
 									<tr>
 										<th data-hide="phone">ID</th>
-										<th data-class="expand">Image</th>
-										<th data-hide="phone">Full name</th>
-										<th data-hide="phone,tablet">Email</th>
+										<th data-class="expand"><?= lang('Image');?></th>
+										<th data-hide="phone"><?= lang('full_name');?></th>
+										<th data-hide="phone,tablet"><?= lang('email');?></th>
 										
-										<th data-hide="phone,tablet">Contact number</th>
-										<th data-hide="phone,tablet">Status</th>
-										<th data-hide="phone,tablet">Action</th>
+										<th data-hide="phone,tablet"><?= lang('contact_number');?></th>
+										<th data-hide="phone,tablet"><?= lang('Status');?></th>
+										<th data-hide="phone,tablet"><?= lang('Action');?></th>
 										
 									</tr>
 								</thead>

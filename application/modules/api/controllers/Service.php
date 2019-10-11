@@ -134,16 +134,16 @@ class Service extends Common_Service_Controller{
             switch ($serData->status) {
                 case '0':
                     $applyStatus =1;
-                    $applyMsg = 'Click to Process';
-                       $row[] = '<span class="badge badge bg-color-red">'.display_placeholder_text($serData->statusShow).'</span>'; 
+                    $applyMsg = lang('Click_to_Process');
+                       $row[] = '<span class="badge badge bg-color-red">'.display_placeholder_text(lang($serData->statusShow)).'</span>'; 
                     break;
                 case '1':
                     $applyStatus =2;
-                    $applyMsg = 'Click to Complete';
-                       $row[] = '<span class="badge badge bg-color-blue">'.display_placeholder_text($serData->statusShow).'</span>'; 
+                    $applyMsg = lang('Click_to_Complete');
+                       $row[] = '<span class="badge badge bg-color-blue">'.display_placeholder_text(lang($serData->statusShow)).'</span>'; 
                     break;
                  case '2': 
-                     $row[] = '<span class="badge bg-color-green">'.display_placeholder_text($serData->statusShow).'</span>'; 
+                     $row[] = '<span class="badge bg-color-green">'.display_placeholder_text(lang($serData->statusShow)).'</span>'; 
                     break;
                 
                 default:
@@ -159,10 +159,10 @@ class Service extends Common_Service_Controller{
             $linkDtail = base_url('service/serviceDetail/'.encoding($serData->serviceId));
             if($userType==1):
             if($serData->status!=2):
-            $action .= '<a href="'.$link.'" onclick="statusChange(this);" data-message="You want to change service!" data-serid="'.encoding($serData->serviceId).'" data-sid="'.encoding($applyStatus).'"  class="on-default edit-row table_action" title="View user">'.$applyMsg.'</a>&nbsp;&nbsp;|';
+            $action .= '<a href="'.$link.'" onclick="statusChange(this);" data-message="'.lang('You_want_to_change_service').'" data-serid="'.encoding($serData->serviceId).'" data-sid="'.encoding($applyStatus).'"  class="on-default edit-row table_action" title="" data-title="'.lang('Are_you_sure').'" data-yes="'.lang('Yes').'" data-no="'.lang('No').'">'.$applyMsg.'</a>&nbsp;&nbsp;|';
             endif;
             endif;
-            $action .= '&nbsp;&nbsp;<a href="'.$linkDtail.'" class="on-default edit-row table_action" title="Detail"><i class="fa fa-eye"></i></a>';
+            $action .= '&nbsp;&nbsp;<a href="'.$linkDtail.'" class="on-default edit-row table_action" title="'.lang('Detail').'"><i class="fa fa-eye"></i></a>';
                
             // $clk_edit =  "editFn('admin/categoryCtrl','editGenres','$usersData->id');" ;
             // $action .= '<a href="javascript:void(0)" onclick="'.$clk_edit.'" class="on-default edit-row table_action" title="Edit Event"><i class="fa fa-pencil-square-o"></i></a>';          

@@ -15,48 +15,48 @@
 	<div class="row">
 		<div class="col-sm-6 col-md-6 col-lg-6">
 			<div class="well padding-10">
-				<h4 class="margin-top-0"><b>Service</b></h4>
+				<h4 class="margin-top-0"><b><?= lang('Service_Information');?></b></h4>
 				<hr>
 				<div class="row">
 					<?php switch ($service['status']) {
 							case '0':
-								$status= "Pending";
+								$status= lang('Pending');
 								$label = "pink";
 								break;
 							case '1':
-								$status= "In Progress";
+								$status= lang('In Progress');
 								$label = "greenLight";
 								break;
 							case '2':
-								$status= "Complete";
+								$status= lang('Complete');
 								$label = "blue";
 								break;
 							
 							default:
-								$status= "Pending";
+								$status= lang('Pending');
 								$label = "pink";
 								break;
 						}; ?>
 					<div class="col-sm-12 col-md-12 col-lg-12 ">
 						<ul class="list-group no-margin">
 							<li class="list-group-item">
-								<span class="pull-right"><?php echo ucfirst($service['productName']); ?></span> <b>Service Name</b>
+								<span class="pull-right"><?php echo ucfirst($service['productName']); ?></span> <b><?= lang('Product_Name'); ?></b>
 							</li>	
 							<li class="list-group-item">
-								<span class="pull-right"><?php echo ucfirst($service['vendor']); ?></span> <b>Manufacture</b>
+								<span class="pull-right"><?php echo ucfirst($service['vendor']); ?></span> <b><?= lang('Manufacture'); ?></b>
 							</li>
 							<li class="list-group-item">
-								<span class="pull-right"><?php echo $service['serialNumber']; ?></span> <b>Series Number</b>
+								<span class="pull-right"><?php echo $service['serialNumber']; ?></span> <b> <?= lang('Series_Number'); ?></b>
 							</li>	
 						
 							<li class="list-group-item">
-								<span class="pull-right"><?php echo date("d/m/Y",strtotime($service['purchaseDate'])); ?></span> <b>Date of Purchase</b>
+								<span class="pull-right"><?php echo date("d/m/Y",strtotime($service['purchaseDate'])); ?></span> <b><?= lang('Date_of_Purchase'); ?></b>
 							</li>
 							<li class="list-group-item">
-								<span class="pull-right"><?php echo $service['contactNumber']; ?></span> <b>Contact Number</b>
+								<span class="pull-right"><?php echo $service['contactNumber']; ?></span> <b><?= lang('Contact_Number'); ?></b>
 							</li>
 							<li class="list-group-item">
-								<span class="pull-right"><?php echo ucfirst($serviceUser['fullName']); ?></span> <b>Created By </b>
+								<span class="pull-right"><?php echo ucfirst($serviceUser['fullName']); ?></span> <b><?= lang('Created_By');?> </b>
 							</li>
 							<li class="list-group-item">
 								<div class="badge bg-color-<?php echo $label; ?> txt-color-white pull-right">
@@ -69,21 +69,21 @@
 									switch ($service['status']) {
 									case '0':
 										$applyStatus =1;
-										$applyMsg = 'Click to Process';
+										$applyMsg = lang('Click_to_Process');
 									break;
 									case '1':
 										$applyStatus =2;
-										$applyMsg = 'Click to Complete';
+										$applyMsg = lang('Click_to_Complete');
 									break;
 
 									default:
 										$applyStatus =0;
-										$applyMsg = 'Complete';
+										$applyMsg = lang('Complete');
 									break;
 									}
 								 ?>
 							 	<?php if($service['status']!=2): ?>
-									<a href="javascript:void(0);" <?php if($service['status']!=2): ?> onclick="statusChangeDetail(this);" <?php endif; ?> data-message="You want to change status!" data-serid="<?php echo encoding($service['serviceId']);?>" data-sid="<?php echo encoding($applyStatus);?>"  class="btn btn-success btn-lg"><?php echo $applyMsg; ?></a>
+									<a href="javascript:void(0);" <?php if($service['status']!=2): ?> onclick="statusChangeDetail(this);" <?php endif; ?> data-message="You want to change status!" data-serid="<?php echo encoding($service['serviceId']);?>" data-sid="<?php echo encoding($applyStatus);?>"  class="btn btn-success btn-lg" data-title="<?=lang('Are_you_sure');?>" data-yes="<?=lang('Yes');?>" data-no="<?=lang('No');?>"><?php echo $applyMsg; ?></a>
 								<?php endif; ?> 
 								<?php endif; ?>
 							</li>
@@ -93,7 +93,7 @@
 					
 					<div class="col-sm-12 col-md-12 col-lg-12">
 						<div class="col-sm-12 col-md-12 col-lg-12">
-							<div class="timeline-seperator text-center"> <span>Fault Description </span>
+							<div class="timeline-seperator text-center"> <span><?= lang('Fault_Description');?> </span>
 							</div>
 						</div>
 						<hr>
@@ -102,7 +102,7 @@
 						</div>
 						<hr>
 						<div class="col-sm-12 col-md-12 col-lg-12">
-							<div class="timeline-seperator text-center"> <span>Receipt of Purchase</span>
+							<div class="timeline-seperator text-center"> <span><?= lang('Receipt_of_Purchase'); ?></span>
 							</div>
 						</div>
 						<br>
@@ -176,7 +176,7 @@
 
 					  <?php if(isset($user['userType'])&& $user['userType']==1): ?>				
 					<div class="col-sm-12 col-md-12 col-lg-12">
-						<div class="timeline-seperator text-center"> <span>Internal Comment</span>
+						<div class="timeline-seperator text-center"> <span><?= lang('Internal_Comment');?></span>
 						</div>
 					
 						<hr>
@@ -184,11 +184,11 @@
 						<form method="post" action="<?php echo base_url().'api/service/internalserviceComment' ?>" id="internalcommentForm" class="well padding-bottom-10">
 							<fieldset>
 								<section >
-									<textarea rows="2" class="form-control" name="notes" placeholder="Internal Comment" required><?php echo $service['notes']; ?></textarea>
+									<textarea rows="2" class="form-control" name="notes" placeholder="<?= lang('Internal_Comment');?>" required><?php echo $service['notes']; ?></textarea>
 											<input type="hidden" name="serviceId" value="<?php echo $service['serviceId']; ?>">
 											<div class="margin-top-10">
 												<button type="submit"class="btn btn-sm btn-danger pull-right" id="submit1">
-													Add 
+													<?= lang('Add');?>
 												</button>
 											</div>
 								</section>
@@ -200,7 +200,7 @@
 					</div>
 					<?php endif; ?>			
 					<div class="col-sm-12 col-md-12 col-lg-12">
-						<div class="timeline-seperator text-center"> <span>Comment</span>
+						<div class="timeline-seperator text-center"> <span><?= lang('Comment'); ?></span>
 						</div>
 						<div class="chat-body no-padding profile-message">
 							<ul>
@@ -242,7 +242,7 @@
 									</li> 
 								<?php
 								 } else:
-								 echo "<hr><center>No comment found</center>";
+								 echo "<hr><center>".lang('No_comment_found')."</center>";
 								endif; 
 								 ?>
 								<!-- <li class="message message-reply">
@@ -256,11 +256,11 @@
 						<form method="post" action="<?php echo base_url().'api/service/serviceComment' ?>" id="commentForm" class="well padding-bottom-10"  <?php echo ($service['status']==2)?'style=display:none;': ''; ?> >
 							<fieldset>
 				<section >
-					<textarea rows="2" class="form-control" name="comment" placeholder="What are you thinking?" required></textarea>
+					<textarea rows="2" class="form-control" name="comment" placeholder="<?= lang('What_are_you_thinking');?>" required></textarea>
 							<input type="hidden" name="serviceId" value="<?php echo $service['serviceId']; ?>">
 							<div class="margin-top-10">
 								<button type="submit" id="submit" class="btn btn-sm btn-primary pull-right" <?php echo ($service['status']==2)?'disabled': ''; ?> >
-									Comment
+									<?= lang('Comment'); ?>
 								</button>
 							</div>
 				</section>

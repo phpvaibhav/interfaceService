@@ -1,4 +1,6 @@
 runAllForms();
+  var Success = $('body').data('success-msg'); // Base url
+  var Alert = $('body').data('alert-msg'); // Base url
 //loader manage
 function preLoadshow(e){
   if(e){
@@ -85,11 +87,11 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
           // Messages for form validation
           messages : {
             email : {
-              required : 'Please enter your email address',
-              email : 'Please enter a valid email address'
+              required : email_req,
+              email : valid_email_req
             },
             password : {
-              required : 'Please enter your password'
+              required : password_req
             }
           },
 
@@ -114,7 +116,7 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
                     preLoadshow(false);
                     setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
                   if(res.status=='success'){
-                   toastr.success(res.message, 'Success', {timeOut: 3000});
+                   toastr.success(res.message, Success, {timeOut: 3000});
                     setTimeout(function(){ window.location = base_url+'service'; },4000);
                   /*  if(res.users.userType==1){
 						 window.location = base_url+'service';
@@ -125,7 +127,7 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
 */
                    
                   }else{
-                    toastr.error(res.message, 'Alert!', {timeOut: 3000});
+                    toastr.error(res.message,Alert, {timeOut: 3000});
                   }
                   
                     
@@ -149,8 +151,8 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
           // Messages for form validation
           messages : {
             email : {
-              required : 'Please enter your email address',
-              email : 'Please enter a valid email address'
+              required : email_req,
+              email : valid_email_req
             },
           },
 
@@ -175,11 +177,11 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
                    preLoadshow(false);
                     setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
                   if(res.status=='success'){
-                   toastr.success(res.message, 'Success', {timeOut: 3000});
+                   toastr.success(res.message, Success, {timeOut: 3000});
                     setTimeout(function(){ window.location = base_url; },4000);
                   // window.location = base_url;
                   }else{
-                    toastr.error(res.message, 'Alert!', {timeOut: 4000});
+                    toastr.error(res.message,Alert, {timeOut: 4000});
 
                   }
                   
@@ -235,25 +237,26 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
           // Messages for form validation
           messages : {
             fullName : {
-              required : 'Please enter your full name'
+              required : please_enter_your_full_name
             },
             email : {
-              required : 'Please enter your email address',
-              email : 'Please enter a valid email address'
+              required : please_enter_your_email_address,
+              email : please_enter_a_valid_email_address
             },
             contact : {
-              required : 'Please enter your contact number'
+              required : please_enter_your_contact_number
             },shippingAddress : {
-              required : 'Please enter your shipping address'
+              required : please_enter_your_shipping_address
             },vatNumber : {
-              required : 'Please enter your vat number'
+              required : please_enter_your_vat_number
             },
             password : {
-              required : 'Please enter your password'
+              required : please_enter_password,
+              minlength: please_enter_password_limit
             },
             passwordConfirm : {
-              required : 'Please re-enter your password',
-              equalTo : 'Please enter the same password as above'
+              required : please_re_enter_your_password,
+              equalTo : please_re_enter_wrong_password
             }
           /*  ,firstname : {
               required : 'Please select your first name'
@@ -286,7 +289,7 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
                    preLoadshow(false);
                     setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
                   if(res.status=='success'){
-                   toastr.success(res.message, 'Success', {timeOut: 3000});
+                   toastr.success(res.message,Success, {timeOut: 3000});
                     setTimeout(function(){ window.location = base_url+'service'; },4000);
               /*      if(res.users.userType==1){
 						 window.location = base_url+'service';
@@ -295,7 +298,7 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
                       window.location = base_url+'service';
                     }*/
                   }else{
-                    toastr.error(res.message, 'Alert!', {timeOut: 4000});
+                    toastr.error(res.message,Alert, {timeOut: 4000});
 
                   }
                   
@@ -341,14 +344,14 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
           messages : {
             
             password : {
-              required : 'Please enter your current password'
+              required : please_enter_your_current_password
             },
             npassword : {
-              required : 'Please enter your new password'
+              required : please_enter_your_new_password
             },
             rnpassword : {
-              required : 'Please re-enter your password',
-              equalTo : 'Please enter the same password as above'
+              required : please_re_enter_your_password,
+              equalTo : please_re_enter_wrong_password
             }
          
           },
@@ -371,13 +374,13 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
                    preLoadshow(false);
                     setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
                   if(res.status=='success'){
-                   toastr.success(res.message, 'Success', {timeOut: 3000});
+                   toastr.success(res.message,Success, {timeOut: 3000});
                    setTimeout(function(){ window.location = base_url+'service'; },4000);
                     
                       //window.location = base_url+'admin/dashboard';
                 
                   }else{
-                    toastr.error(res.message, 'Alert!', {timeOut: 4000});
+                    toastr.error(res.message,Alert, {timeOut: 4000});
                   }
                   
                     //$('#submit').prop('disabled', false);  
@@ -415,14 +418,14 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
           // Messages for form validation
           messages : {
             fullName : {
-              required : 'Please enter your login'
+              required : please_enter_your_full_name
             },
             email : {
-              required : 'Please enter your email address',
-              email : 'Please enter a valid email address'
+              required : please_enter_your_email_address,
+              email : please_enter_a_valid_email_address
             },
            contact : {
-              required : 'Please enter your contact number',
+              required : please_enter_your_contact_number,
             
             },
            
@@ -481,26 +484,26 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
           messages : {
        
             productName : {
-              required : 'Please enter your product name'
+              required : Please_enter_your_product_name
             },
             vendor : {
-              required : 'Please enter your manufacture'
+              required : Please_enter_your_manufacture
             }, 
             modelName : {
-              required : 'Please enter your model name'
+              required : Please_enter_your_model_name
             },
             serialNumber : {
-              required : 'Please enter your product series number',
+              required : Please_enter_your_product_series_number,
            
             },
             purchaseDate : {
-              required : 'Please select your product date of purchase'
+              required : Please_select_your_product_date_of_purchase
             },
             contactNumber : {
-              required : 'Please enter your contact number'
+              required : Please_enter_your_contact_number
             },
             faultDescription : {
-              required : 'Please enter your fault description'
+              required : Please_enter_your_fault_description
             },
            
           },
@@ -563,7 +566,7 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
              preLoadshow(false);
                    setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
                   if(res.status=='success'){
-                   toastr.success(res.message, 'Success', {timeOut: 3000});
+                   toastr.success(res.message,Success, {timeOut: 3000});
                    setTimeout(function(){ window.location = base_url+'service'; },4000);
                   // window.location = base_url+'service';
                   }else{
@@ -595,11 +598,11 @@ $(document).on('submit', "#smart-form-updateuser", function (event) {
              preLoadshow(false);
                    setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
                   if(res.status=='success'){
-                   toastr.success(res.message, 'Success', {timeOut: 3000});
+                   toastr.success(res.message,Success, {timeOut: 3000});
                    setTimeout(function(){ window.location = base_url+'users/userDetail/'+res.url; },4000);
                    
                   }else{
-                    toastr.error(res.message, 'Alert!', {timeOut: 4000});
+                    toastr.error(res.message,Alert, {timeOut: 4000});
                   }
                   
                     
@@ -661,11 +664,11 @@ $(document).on('submit', "#smart-form-updateuser", function (event) {
                    preLoadshow(false);
                     setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
                   if(res.status=='success'){
-                   toastr.success(res.message, 'Success', {timeOut: 3000});
+                   toastr.success(res.message,Success, {timeOut: 3000});
                     setTimeout(function(){ window.location = base_url; },4000);
                   
                   }else{
-                    toastr.error(res.message, 'Alert!', {timeOut: 4000});
+                    toastr.error(res.message, Alert, {timeOut: 4000});
                   }
                   
                   //  $('#submit').prop('disabled', false);  
@@ -710,11 +713,11 @@ $("#commentForm").validate({
                     preLoadshow(false);
                     setTimeout(function(){  $('#submit').prop('disabled', false); },4000);
                   if(res.status=='success'){
-                   toastr.success(res.message, 'Success', {timeOut: 3000});
+                   toastr.success(res.message,Success, {timeOut: 3000});
                       setTimeout(function(){ location.reload(); },3000);
                   
                   }else{
-                    toastr.error(res.message, 'Alert!', {timeOut: 4000});
+                    toastr.error(res.message,Alert, {timeOut: 4000});
                   }
                   
                   //  $('#submit').prop('disabled', false);  
@@ -758,11 +761,11 @@ $("#internalcommentForm").validate({
                     preLoadshow(false);
                     setTimeout(function(){  $('#submit1').prop('disabled', false); },4000);
                   if(res.status=='success'){
-                   toastr.success(res.message, 'Success', {timeOut: 3000});
+                   toastr.success(res.message,Success, {timeOut: 3000});
                       setTimeout(function(){ location.reload(); },3000);
                   
                   }else{
-                    toastr.error(res.message, 'Alert!', {timeOut: 4000});
+                    toastr.error(res.message, Alert, {timeOut: 4000});
                   }
                   
                   //  $('#submit').prop('disabled', false);  

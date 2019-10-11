@@ -12,7 +12,7 @@ class Api extends Common_Service_Controller{
     function registration_post(){
         
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]',
-            array('is_unique' => 'Email already exist')
+            array('is_unique' =>ResponseMessages::getStatusCodeMessage(117))
         );
       
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]|max_length[20]');
@@ -58,7 +58,7 @@ class Api extends Common_Service_Controller{
                 
                 //check for error
                 if(array_key_exists("error",$image) && !empty($image['error'])){
-                    $response = array('status' => FAIL, 'message' => strip_tags($image['error'].'(In user Image)'));
+                    $response = array('status' => FAIL, 'message' => strip_tags($image['error'].'('.lang('In_user_Image').')'));
                    $this->response($response);
                 }
                 
@@ -77,9 +77,9 @@ class Api extends Common_Service_Controller{
                     case "NR": // Normal registration
                     $this->StoreSession($result['returnData']);
                     //send mail
-                        $maildata['title']    = $result['returnData']->fullName." been invited to join ".SITE_NAME;
-                        $maildata['message']  = "<table><tr><td>Name</td><td>".$result['returnData']->fullName."</td></tr><tr><td>Email</td><td>".$result['returnData']->email."</td></tr></table>";
-                        $subject = "Create customer";
+                        $maildata['title']    = $result['returnData']->fullName.lang('been_invited_to_join').SITE_NAME;
+                        $maildata['message']  = "<table><tr><td>".lang('full_name')."</td><td>".$result['returnData']->fullName."</td></tr><tr><td>".lang('email')."</td><td>".$result['returnData']->email."</td></tr></table>";
+                        $subject = lang('create_customer');
                         $message=$this->load->view('emails/email',$maildata,TRUE);
                         $emails = $this->common_model->adminEmails();
                         if(!empty($emails)){
@@ -167,12 +167,12 @@ class Api extends Common_Service_Controller{
         $email = $this->post('email');
         $response = $this->api_model->forgotPassword($email);
         if($response['emailType'] == 'ES'){ //ES emailSend
-            $response = array('status' => SUCCESS, 'message' => 'Please check your mail to reset your password.');
+            $response = array('status' => SUCCESS, 'message' => lang('please_check_your_mail_to_reset_your_password'));
         }elseif($response['emailType'] == 'NS'){ //NS NotSend
-            $response = array('status' => FAIL, 'message' => 'Error not able to send email');
+            $response = array('status' => FAIL, 'message' => lang('error_not_able_to_send_email'));
         }
         elseif($response['emailType'] == 'NE'){ //NE Not exist
-            $response = array('status' => FAIL, 'message' => 'This Email does not exist'); 
+            $response = array('status' => FAIL, 'message' =>lang('this_email_does_not_exist')); 
         }elseif($response['emailType'] == 'SL'){ //SL social login
             $response = array('status' => FAIL, 'message' => 'Social registered users are not allowed to access Forgot password'); 
         }

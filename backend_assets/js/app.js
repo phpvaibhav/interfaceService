@@ -110,12 +110,12 @@ var calc_navbar_height = function() {
 			
 					// ask verification
 					$.SmartMessageBox({
-						title : "<i class='fa fa-sign-out txt-color-orangeDark'></i> Logout <span class='txt-color-orangeDark'><strong>" + $('#show-shortcut').text() + "</strong></span> ?",
+						title : "<i class='fa fa-sign-out txt-color-orangeDark'></i> "+$this.data('logout-title')+" <span class='txt-color-orangeDark'><strong>" + $('#show-shortcut').text() + "</strong></span> ?",
 						content : $this.data('logout-msg') || "You can improve your security further after logging out by closing this opened browser",
-						buttons : '[No][Yes]'
+						buttons : '['+$this.data('logout-no')+']['+$this.data('logout-yes')+']'
 			
 					}, function(ButtonPressed) {
-						if (ButtonPressed == "Yes") {
+						if (ButtonPressed == $this.data('logout-yes')) {
 							$.root_.addClass('animated fadeOutUp');
 							setTimeout(logout, 1000);
 						}
@@ -130,11 +130,11 @@ var calc_navbar_height = function() {
 			    resetWidgets: function($this){
 					
 					$.SmartMessageBox({
-						title : "<i class='fa fa-refresh' style='color:green'></i> Clear Local Storage",
-						content : $this.data('reset-msg') || "Would you like to RESET all your saved widgets and clear LocalStorage?1",
-						buttons : '[No][Yes]'
+						title : "<i class='fa fa-refresh' style='color:green'></i> "+$this.data('reset-title'),
+						content : $this.data('reset-msg') || "Would you like to RESET all your saved widgets and clear LocalStorage?",
+						buttons :  '['+$this.data('reset-no')+']['+$this.data('reset-yes')+']'
 					}, function(ButtonPressed) {
-						if (ButtonPressed == "Yes" && localStorage) {
+						if (ButtonPressed == $this.data('reset-yes') && localStorage) {
 							localStorage.clear();
 							location.reload();
 						}

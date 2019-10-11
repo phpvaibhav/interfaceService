@@ -106,7 +106,7 @@ define('USER_DEFAULT_AVATAR', 'backend_assets/img/avatars/1.png'); //user placeh
 
 //Title, Site name, Copyright etc
 define('SITE_NAME','Audiens Service Partner'); //your project name
-define('COPYRIGHT','&copy; ' . date('Y') . ', Audiens Service Partner. All rights reserved.');
+define('COPYRIGHT',' &copy; ' . date('Y') . ', Audiens Service Partner ,');
 define('INFO_EMAIL','info@audiensservicepartner.com'); //your project name
 
 

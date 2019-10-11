@@ -12,6 +12,35 @@ class Common_Service_Controller extends REST_Controller{
         ini_set('display_errors', 1);
         $this->load->model('api_model'); //load api model model
         $this->load->helper('response_message'); //load api response message helper
+        /* language*/
+        //$this->load->model('notification_model'); //load push notification model
+        $language_array = array('english','norwegian');//language array
+        $this->appLang = 'norwegian'; //set default langauge
+        $header = $this->input->request_headers();//get header values
+        $lang_key = '';//set key
+        //check for language key exist in header array or not
+        if(array_key_exists ( 'language' , $header )){
+            $lang_key = 'language';
+        } elseif(array_key_exists ( 'Language' , $header )){
+            $lang_key = 'Language';
+        }
+
+        if(!empty($lang_key)){//if language key not empty get language from header
+
+            $lang_val = $header[$lang_key];//get header language 
+
+            if(in_array($lang_val,$language_array )){//check if header langauge in array set in varaible
+                $this->appLang = $lang_val;
+            }
+        }
+
+        if($this->appLang == 'norwegian'){
+            $this->config->set_item('language', $this->appLang);
+        }
+        $this->lang->load('login_signup_message_lang', $this->appLang);
+        $this->lang->load('response_messages_lang', $this->appLang); 
+        $this->lang->load('home_message_lang', $this->appLang); 
+        //load response language files for selected language
     }
     
     /**

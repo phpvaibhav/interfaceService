@@ -11,8 +11,8 @@
 								<div id="myCarousel" class="carousel fade profile-carousel">
 									<div class="air air-bottom-right padding-10">
 										<?php  if($userData['userType']!=$user['userType']):?>
-										<a href="javascript:void(0);"  <?php  if($userData['userType']!=$user['userType']):?> onclick="statusChangeuserDtails(this);"<?php endif; ?> data-message="You want to change status!" data-useid="<?php echo encoding($userData['id']);?>" class="btn txt-color-white bg-color-teal btn-sm"><i class="fa fa-<?php echo $userData['status']?'check':'close'; ?>"></i><?php echo $userData['status']?' Active':' Inactive'; ?></a> <?php else: ?> 
-										<label class="center-block padding-5 label label-<?php echo $userData['status']?'success':'danger'; ?>"> <i class="fa fa-<?php echo $userData['status']?'check':'close'; ?>"></i><?php echo $userData['status']?' Active':' Inactive'; ?></label>
+										<a href="javascript:void(0);"  <?php  if($userData['userType']!=$user['userType']):?> onclick="statusChangeuserDtails(this);"<?php endif; ?> data-message="You want to change status!" data-useid="<?php echo encoding($userData['id']);?>" class="btn txt-color-white bg-color-teal btn-sm"><i class="fa fa-<?php echo $userData['status']?'check':'close'; ?>"></i><?php echo $userData['status']? lang('Active'): lang('Inactive'); ?></a> <?php else: ?> 
+										<label class="center-block padding-5 label label-<?php echo $userData['status']?'success':'danger'; ?>"> <i class="fa fa-<?php echo $userData['status']?'check':'close'; ?>"></i><?php echo $userData['status']?lang('Active'):lang('Inactive'); ?></label>
 									<?php endif; ?> 
 										&nbsp;<!--  <a href="javascript:void(0);" class="btn txt-color-white bg-color-pinkDark btn-sm"><i class="fa fa-link"></i> Connect</a> -->
 									</div>
@@ -258,25 +258,25 @@
 						<!-- update -->
 						<form action="updateUser" id="smart-form-updateuser" class="smart-form client-form" enctype="multipart/form-data" novalidate="" autocomplete="off">
 							<header>
-								Update
+								<?= lang('Update');?>
 							</header>
 							<fieldset>
 								<section>
 									<label class="input"> <i class="icon-append fa fa-user"></i>
-									<input type="text" name="fullName" placeholder="Full name" value="<?php echo $userData['fullName']; ?>">
+									<input type="text" name="fullName" placeholder="<?= lang('full_name');?>" value="<?php echo $userData['fullName']; ?>">
 									<input type="hidden" name="userauth" value="<?php echo $this->uri->segment(3); ?>">
-									<b class="tooltip tooltip-bottom-right">Please enter your full name</b> </label>
+									<b class="tooltip tooltip-bottom-right"><?= lang('please_enter_your_full_name');?></b> </label>
 								</section>
 
 								<section>
 								<label class="input"> <i class="icon-append fa fa-envelope"></i>
-									<input type="email" name="email" placeholder="Email address" value="<?php echo $userData['email']; ?>" <?php echo $user['userType']==1?'':'readonly'; ?>>
-									<b class="tooltip tooltip-bottom-right">Please enter your registered email address</b> </label>
+									<input type="email" name="email" placeholder="<?= lang('email');?>" value="<?php echo $userData['email']; ?>" <?php echo $user['userType']==1?'':'readonly'; ?>>
+									<b class="tooltip tooltip-bottom-right"><?= lang('please_enter_your_email_address');?></b> </label>
 								</section>
 								<section>
 									<label class="input"> <i class="icon-append fa fa-phone"></i>
-									<input type="text" name="contact" maxlength="20" size="20" class="number-only" placeholder="Contact"  value="<?php echo $userData['contactNumber']; ?>" data-mask="(999) 999-9999">
-									<b class="tooltip tooltip-bottom-right">Please enter your contact number</b> </label>
+									<input type="text" name="contact" maxlength="20" size="20" class="number-only" placeholder="<?= lang('contact_number');?>"  value="<?php echo $userData['contactNumber']; ?>" data-mask="(999) 999-9999">
+									<b class="tooltip tooltip-bottom-right"><?= lang('please_enter_your_contact_number');?></b> </label>
 								</section>
 							<!-- 	<section>
 									<label class="textarea">
@@ -284,35 +284,35 @@
 									</label>
 								</section> -->
 <section>
-					<label class="label">Shipping Address</label>
+					<label class="label"><?= lang('shipping_address');?></label>
 					<label class="input"> <i class="icon-append fa fa-location-arrow"></i>
-					<input type="text" name="shippingAddress" value="<?php echo $userData['shippingAddress']; ?>" maxlength="50" size="50" class="" placeholder="Shipping Address" >
-					<b class="tooltip tooltip-bottom-right">Please enter your shipping address</b> </label>
+					<input type="text" name="shippingAddress" value="<?php echo $userData['shippingAddress']; ?>" maxlength="50" size="50" class="" placeholder="<?= lang('shipping_address');?>" >
+					<b class="tooltip tooltip-bottom-right"><?= lang('please_enter_your_shipping_address');?></b> </label>
 				</section>
 
 				<section>
-					<label class="label">VAT Number</label>
+					<label class="label"><?= lang('vat_Number');?></label>
 					<label class="input"> <i class="icon-append fa fa-list"></i>
-					<input type="text" name="vatNumber" value="<?php echo $userData['vatNumber']; ?>" maxlength="50" size="50" class="" placeholder="VAT Number" >
-					<b class="tooltip tooltip-bottom-right">Please enter your vat Number</b> </label>
+					<input type="text" name="vatNumber" value="<?php echo $userData['vatNumber']; ?>" maxlength="50" size="50" class="" placeholder="<?= lang('vat_Number');?>" >
+					<b class="tooltip tooltip-bottom-right"><?= lang('please_enter_your_vat_number');?></b> </label>
 				</section>
 				<section>
-					<label class="label">Invoice Details</label>
+					<label class="label"><?= lang('invoice_details');?></label>
 					<label class="textarea">
-						<textarea name="invoiceDetail" placeholder="Invoice Details" maxlength="700"><?php echo $userData['invoiceDetail']; ?></textarea>
+						<textarea name="invoiceDetail" placeholder="<?= lang('invoice_details');?>" maxlength="700"><?php echo $userData['invoiceDetail']; ?></textarea>
 						</label>
 				</section>
 								<section>
-								<label class="label">Profile</label>
+								<label class="label"><?= lang('Profile');?></label>
 								<div class="input input-file">
-								<span class="button"><input type="file" name="profileImage" id="file" onchange="this.parentNode.nextSibling.value = this.value" accept="image/*">Browse</span><input type="text" readonly="">
+								<span class="button"><input type="file" name="profileImage" id="file" onchange="this.parentNode.nextSibling.value = this.value" accept="image/*"><?= lang('Browse');?></span><input type="text" readonly="">
 								</div>
 
 								</section>
 							</fieldset>
 						<footer>
 						<button type="submit" id="submit" class="btn btn-primary">
-						Update
+						<?= lang('Update');?>
 						</button>
 					</footer>
 

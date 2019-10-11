@@ -87,7 +87,7 @@
     * 'fixed-page-footer' - Fixes footer
     * 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
   -->
-  <body class="" data-base-url="<?php echo base_url(); ?>"data-auth-url="<?php echo $user['authToken']; ?>">
+  <body class="" data-base-url="<?php echo base_url(); ?>"data-auth-url="<?php echo $user['authToken']; ?>" data-success-msg="<?= lang('Success'); ?>" data-alert-msg="<?= lang('Alert'); ?>" >
 
     <!-- #preloader -->
   <!--   <div class="preloader" id="preloader">
@@ -99,7 +99,7 @@
       <div id="logo-group">
 
         <!-- PLACE YOUR LOGO HERE -->
-        <span id="logo"> <img src="<?php echo $backend_assets; ?>img/logo.png" alt="SmartAdmin"> </span>
+        <span id="logo"> <img src="<?php echo $backend_assets; ?>img/logo.png" alt="<?php echo SITE_NAME; ?>"> </span>
         <!-- END LOGO PLACEHOLDER -->
 
       </div>
@@ -111,7 +111,7 @@
         
         <!-- collapse menu button -->
         <div id="hide-menu" class="btn-header pull-right">
-          <span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+          <span> <a href="javascript:void(0);" data-action="toggleMenu" title="<?= lang('Collapse_Menu'); ?>"><i class="fa fa-reorder"></i></a> </span>
         </div>
         <!-- end collapse menu -->
         
@@ -148,7 +148,7 @@
 
         <!-- logout button -->
         <div id="logout" class="btn-header transparent pull-right">
-          <span> <a href="<?php echo base_url().'admin/logout'; ?>" title="Sign Out" data-action="userLogout" data-logout-msg="Are you sure you want to logout ?"><i class="fa fa-sign-out"></i></a> </span>
+          <span> <a href="<?php echo base_url().'admin/logout'; ?>" title="<?= lang('Logout'); ?>" data-action="userLogout" data-logout-msg="<?= lang('are_you_sure_you_want_to_logout'); ?>" data-logout-title="<?= lang('Logout'); ?>" data-logout-yes="<?= lang('Yes'); ?>" data-logout-no="<?= lang('No'); ?>" ><i class="fa fa-sign-out"></i></a> </span>
         </div>
         <!-- end logout button -->
 
@@ -158,7 +158,7 @@
 
         <!-- fullscreen button -->
         <div id="fullscreen" class="btn-header transparent pull-right">
-          <span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
+          <span> <a href="javascript:void(0);" data-action="launchFullscreen" title="<?=lang('Full_Screen'); ?>"><i class="fa fa-arrows-alt"></i></a> </span>
         </div>
         <!-- end fullscreen button -->
         
@@ -199,15 +199,15 @@
 
         <ul>
           <li class="<?php echo (strtolower($this->router->fetch_class()) == "service") ? "active open" : "" ?>">
-            <a href="#" title="Services"><i class="fa fa-lg fa-fw fa-cog"></i> <span class="menu-item-parent">Services</span></a>
+            <a href="#" title="<?= lang('Services');?>"><i class="fa fa-lg fa-fw fa-cog"></i> <span class="menu-item-parent"><?= lang('Services');?></span></a>
             <ul>
               <li class="<?php echo (($this->uri->segment('2') == "" OR $this->uri->segment('2') == "serviceDetail") && $this->uri->segment('1') == "service") ? "active" : ""; ?>">
-                <a href="<?php echo base_url().'service'; ?>" title="Services"><span class="menu-item-parent">
-                  <?php echo (isset($user['userType'])&& $user['userType']==2) ? "My Services" :"Services"; ?></span></a>
+                <a href="<?php echo base_url().'service'; ?>" title="<?= lang('My_Services');?>"><span class="menu-item-parent">
+                  <?php echo (isset($user['userType'])&& $user['userType']==2) ? lang('My_Services') :lang('Services'); ?></span></a>
               </li>
               <?php if(isset($user['userType'])&& $user['userType']==2): ?>
               <li class="<?php echo ($this->uri->segment('2') == "add_service" ) ? "active" : ""; ?>">
-                <a href="<?php echo base_url().'service/add_service'; ?>" title="Add service"><span class="menu-item-parent">Add Service</span></a>
+                <a href="<?php echo base_url().'service/add_service'; ?>" title="<?= lang('Add_service');?>"><span class="menu-item-parent"><?= lang('Add_service');?></span></a>
               </li>
             <?php endif; ?>
            
@@ -215,7 +215,7 @@
           </li>
           <?php if(isset($user['userType'])&& $user['userType']==1): ?>
       <li class="<?php echo (strtolower($this->router->fetch_class()) == "users") ? "active open" : "" ?>">
-            <a href="<?php echo base_url().'users'; ?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent">Users</span></a>
+            <a href="<?php echo base_url().'users'; ?>" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
           </li> 
         <?php endif; ?>
         </ul>
@@ -236,7 +236,7 @@
       <div id="ribbon">
 
         <span class="ribbon-button-alignment"> 
-          <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
+          <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> <?= lang('Warning_This_will_reset_all_your_widget_settings'); ?>" data-html="true" data-reset-msg="<?= lang('rest_all');?>" data-reset-title="<?= lang('Clear_Local_Storage');?>" data-reset-yes="<?= lang('Yes'); ?>" data-reset-no="<?= lang('No'); ?>">
             <i class="fa fa-refresh"></i>
           </span> 
         </span>

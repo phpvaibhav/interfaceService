@@ -46,7 +46,7 @@
 }
 </style>
   </head>
-  <body class="animated fadeInDown" data-base-url="<?php echo base_url(); ?>">
+  <body class="animated fadeInDown" data-base-url="<?php echo base_url(); ?>" data-success-msg="<?= lang('Success'); ?>" data-alert-msg="<?= lang('Alert'); ?>">
  <!-- #preloader -->
    <div class="preloader" id="preloader">
       <div class="spinner"></div>
@@ -55,11 +55,11 @@
     <header id="header">
 
       <div id="logo-group">
-        <span id="logo"> <img src="<?php echo $backend_assets; ?>img/logo.png" alt="SmartAdmin"> </span>
+        <span id="logo"> <img src="<?php echo $backend_assets; ?>img/logo.png" alt="<?php echo SITE_NAME; ?>"> </span>
       </div>
     <?php  if($this->uri->segment('2') !='signup'): ?>
-   <span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs">Need an account?</span> <a href="<?php echo base_url().'admin/signup'; ?>" class="btn btn-warning">Create account</a> </span> 
+   <span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs"><?php echo lang('need_an_account'); ?></span> <a href="<?php echo base_url().'admin/signup'; ?>" class="btn btn-warning"><?php echo lang('create_account'); ?></a> </span> 
     <?php else: ?>
-    <span id="extr-page-header-space"> <!-- <span class="hidden-mobile hiddex-xs">Already registered?</span> --> <a href="<?php echo base_url(); ?>" class="btn btn-warning">Sign In</a> </span>
+    <span id="extr-page-header-space"> <!-- <span class="hidden-mobile hiddex-xs">Already registered?</span> --> <a href="<?php echo base_url(); ?>" class="btn btn-warning"><?php echo lang('sign_in'); ?></a> </span>
     <?php endif; ?>
     </header>

@@ -13,6 +13,79 @@ class Common_Back_Controller extends MX_Controller {
         parent::__construct();
         $this->admin_user_session_key = ADMIN_USER_SESS_KEY; //user session key
         $this->tbl_users = ADMIN; //admin table
+        /* language*/
+        //$this->load->model('notification_model'); //load push notification model
+        $language_array = array('english','norwegian');//language array
+        $this->appLang = 'norwegian'; //set default langauge
+        $header = $this->input->request_headers();//get header values
+        $lang_key = '';//set key
+        //check for language key exist in header array or not
+        if(array_key_exists ( 'language' , $header )){
+            $lang_key = 'language';
+        } elseif(array_key_exists ( 'Language' , $header )){
+            $lang_key = 'Language';
+        }
+
+        if(!empty($lang_key)){//if language key not empty get language from header
+
+            $lang_val = $header[$lang_key];//get header language 
+
+            if(in_array($lang_val,$language_array )){//check if header langauge in array set in varaible
+                $this->appLang = $lang_val;
+            }
+        }
+
+        if($this->appLang == 'norwegian'){
+            $this->config->set_item('language', $this->appLang);
+        }
+        $this->lang->load('login_signup_message_lang', $this->appLang);
+        $this->lang->load('response_messages_lang', $this->appLang); 
+        $this->lang->load('home_message_lang', $this->appLang); 
+        //load response language files for selected language
+/*       
+        //set languages your platform supports
+        $supportedLangs = array('en', 'no');
+        
+        if($this->session->userdata('language') == ''){
+            //check browser's HTTP_ACCEPT_LANGUAGE header
+            if(!isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
+                //default to English(en) if HTTP_ACCEPT_LANGUAGE is not available
+                $setLocale = 'en'; //return here
+            }
+
+            $languages = explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
+            $setLocale = 'no';
+
+            foreach($languages as $lang) {
+
+                //get only first two letter of language
+                $lang_tag = substr($lang, 0, 2);
+
+                if(in_array($lang_tag, $supportedLangs)) {
+                    // Set the page locale to the first supported language found
+                    $setLocale = $lang_tag;
+                    break;
+                }
+            }
+
+            //when no supported language found default to English(en)
+            if(empty($setLocale)){
+
+                $setLocale = 'en';
+            }
+
+            if($setLocale == 'no'){
+                
+                $this->session->set_userdata('language', 'norwegian');
+
+            }else{
+
+                $this->session->set_userdata('language', 'english');
+            }
+        }*/
+        //echo "Set language is: $setLocale"; //return here
+        //$this->lang->load('en', 'english');
+        /* language*/
     }
     
     /**

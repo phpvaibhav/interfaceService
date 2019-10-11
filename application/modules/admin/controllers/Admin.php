@@ -8,12 +8,14 @@ class Admin extends Common_Back_Controller {
 
     function __construct() {
         parent::__construct();
+       
         $this->check_admin_user_session();
+        
       //  $this->load->model('admin_model');
     }
 
     public function index() { 
-        
+      
         $data['title'] = "Login";
         $this->load->login_render('login', $data);
     }

@@ -15,19 +15,19 @@ class Service extends Common_Back_Controller {
 
     public function index() { 
         
-        $data['title'] =    ($_SESSION[ADMIN_USER_SESS_KEY]['userType']==1)?"Service Information" :"My Services";
-          $data['recordSet'] = array('<li class="sparks-info"><h5>Service PDF<span class="txt-color-blue"><a class="anchor-btn" href="'.base_url().'service/servicePdf" target="_blank" ><i class="fa fa-file-pdf-o"></i></a></span></h5></li>',);
+        $data['title'] =    ($_SESSION[ADMIN_USER_SESS_KEY]['userType']==1)? lang('Service_Information') :lang('My_Services');
+          $data['recordSet'] = array('<li class="sparks-info"><h5>'.lang('Report_PDF').'<span class="txt-color-blue"><a class="anchor-btn" href="'.base_url().'service/servicePdf" target="_blank" ><i class="fa fa-file-pdf-o"></i></a></span></h5></li>',);
         $this->load->admin_render('service', $data);
     } 
     public function add_service() { 
         
-        $data['title'] = "Add Service";
+        $data['title'] = lang('Add_service');
         $this->load->admin_render('add_service', $data);
     } 
     public function serviceDetail() { 
         
-        $data['title'] = "Service Information";
-         $data['recordSet'] = array('<li class="sparks-info"><h5>Report PDF<span class="txt-color-blue"><a class="anchor-btn" href="'.base_url().'service/serviceDetailPdf/'.$this->uri->segment(3).'" target="_blank" ><i class="fa fa-file-pdf-o"></i></a></span></h5></li>',);
+        $data['title'] = lang('Service_Information');
+         $data['recordSet'] = array('<li class="sparks-info"><h5>'.lang('Report_PDF').'<span class="txt-color-blue"><a class="anchor-btn" href="'.base_url().'service/serviceDetailPdf/'.$this->uri->segment(3).'" target="_blank" ><i class="fa fa-file-pdf-o"></i></a></span></h5></li>',);
         $serviceId  = decoding($this->uri->segment(3));
 
         $service = $this->common_model->getsingle('service',array('serviceId'=>$serviceId));
@@ -52,9 +52,9 @@ class Service extends Common_Back_Controller {
       // set document information
       $pdf->SetCreator(PDF_CREATOR);
       $pdf->SetAuthor(SITE_NAME);
-      $pdf->SetTitle('Service Information');
+      $pdf->SetTitle(lang('Service_Information'));
       $pdf->SetSubject(SITE_NAME);
-      $pdf->SetKeywords(SITE_NAME.',service');
+      $pdf->SetKeywords(SITE_NAME.','.lang('Service_Information'));
 
       // set default header data
       //$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.'', PDF_HEADER_STRING);

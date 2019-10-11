@@ -1,5 +1,7 @@
  var base_url = $('body').data('base-url'); // Base url
   var authToken = $('body').data('auth-url'); // Base url
+  var Success = $('body').data('success-msg'); // Base url
+  var Alert = $('body').data('alert-msg'); // Base url
           /*listing service */
           var service_list = $('#service_list').DataTable({ 
 
@@ -8,16 +10,28 @@
               "order": [], //Initial no order.
                "lengthChange": false,
               "oLanguage": {
-               "sEmptyTable" : '<center>No service found</center>',
+               "sEmptyTable" : '<center>'+No_service_found+'</center>',
                 "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>' 
               },
                "oLanguage": {
-               "sZeroRecords" : '<center>No service found</center>',
-                 "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>' 
+               "sZeroRecords" : '<center>'+No_service_found+'</center>',
+                 "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>' ,
+                  "sInfo": Showing_START_to_END_of_TOTAL_records,
+                  "sInfoEmpty": Showing_0_to_0_of_0_records,
+                  "sInfoFiltered": filtered_from_MAX_total_records,
+                          "oPaginate": {
+            "sFirst":    First,
+            "sLast":    Last,
+            "sNext":    Next,
+            "sPrevious": Previous
+        },
+
               },
                initComplete: function () {
     $('.dataTables_filter input[type="search"]').css({ 'height': '32px'});
     },
+
+       
              
               // Load data for the table's content from an Ajax source
               "ajax": {
@@ -47,13 +61,22 @@
               "order": [], //Initial no order.
                "lengthChange": false,
               "oLanguage": {
-               "sEmptyTable" : '<center>No customer found</center>',
+               "sEmptyTable" : '<center>'+No_customer_found+'</center>',
               "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>' 
               },
               
                "oLanguage": {
-               "sZeroRecords" : '<center>No customer found</center>',
-                "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>'
+               "sZeroRecords" :  '<center>'+No_customer_found+'</center>',
+                "sSearch": '<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>',
+                                  "sInfo": Showing_START_to_END_of_TOTAL_records,
+                  "sInfoEmpty": Showing_0_to_0_of_0_records,
+                  "sInfoFiltered": filtered_from_MAX_total_records,
+                                            "oPaginate": {
+            "sFirst":    First,
+            "sLast":    Last,
+            "sNext":    Next,
+            "sPrevious": Previous
+        },
               },
                           initComplete: function () {
     $('.dataTables_filter input[type="search"]').css({ 'height': '32px'});
@@ -80,13 +103,13 @@
      
 function statusChange(e){
   swal({
-  title: "Are you sure?",
+  title: $(e).data('title'),
   text:  $(e).data('message'),
   type: "warning",
   showCancelButton: true,
   confirmButtonClass: "btn-danger",
-  confirmButtonText: "Yes",
-  cancelButtonText: "No",
+  confirmButtonText: $(e).data('yes'),
+  cancelButtonText: $(e).data('no'),
   closeOnConfirm: true,
   closeOnCancel: true,
  // showLoaderOnConfirm: true
@@ -108,10 +131,10 @@ function(isConfirm) {
                   if(res.status=='success'){
                    
                   
-                    toastr.success(res.message, 'Success', {timeOut: 3000});
+                    toastr.success(res.message, Success, {timeOut: 3000});
                  $('#service_list').DataTable().ajax.reload();
                   }else{
-                    toastr.error(res.message, 'Alert!', {timeOut: 5000});
+                    toastr.error(res.message,Alert, {timeOut: 5000});
                   }
                   
                      
@@ -126,13 +149,13 @@ function(isConfirm) {
 }     
 function statusChangeDetail(e){
   swal({
-  title: "Are you sure?",
+  title: $(e).data('title'),
   text:  $(e).data('message'),
   type: "warning",
   showCancelButton: true,
   confirmButtonClass: "btn-danger",
-  confirmButtonText: "Yes",
-  cancelButtonText: "No",
+  confirmButtonText: $(e).data('yes'),
+  cancelButtonText: $(e).data('no'),
   closeOnConfirm: true,
   closeOnCancel: true,
  // showLoaderOnConfirm: true
@@ -154,11 +177,11 @@ function(isConfirm) {
                   if(res.status=='success'){
                    
                   
-                    toastr.success(res.message, 'Success', {timeOut: 3000});
+                    toastr.success(res.message, Success, {timeOut: 3000});
                      setTimeout(function(){ location.reload(); },4000);
                    
                   }else{
-                    toastr.error(res.message, 'Alert!', {timeOut: 5000});
+                    toastr.error(res.message,Alert, {timeOut: 5000});
                   }
                   
                      
@@ -173,13 +196,13 @@ function(isConfirm) {
 }
 function statusChangeuser(e){
   swal({
-  title: "Are you sure?",
+  title: $(e).data('title'),
   text:  $(e).data('message'),
   type: "warning",
   showCancelButton: true,
   confirmButtonClass: "btn-danger",
-  confirmButtonText: "Yes",
-  cancelButtonText: "No",
+  confirmButtonText: $(e).data('yes'),
+  cancelButtonText: $(e).data('no'),
   closeOnConfirm: true,
   closeOnCancel: true,
  // showLoaderOnConfirm: true
@@ -200,11 +223,11 @@ function(isConfirm) {
                    preLoadshow(false);
                   if(res.status=='success'){
                    
-                   toastr.success(res.message, 'Success', {timeOut: 3000});
+                   toastr.success(res.message,Success, {timeOut: 3000});
                  //  swal("Success", "Your process  has been successfully done.", "success");
                  $('#user_list').DataTable().ajax.reload();
                   }else{
-                    toastr.error(res.message, 'Alert!', {timeOut: 5000});
+                    toastr.error(res.message,Alert, {timeOut: 5000});
                   }
                   
                      
@@ -219,13 +242,13 @@ function(isConfirm) {
 }
 function statusChangeuserDtails(e){
   swal({
-  title: "Are you sure?",
+  title: $(e).data('title'),
   text:  $(e).data('message'),
   type: "warning",
   showCancelButton: true,
   confirmButtonClass: "btn-danger",
-  confirmButtonText: "Yes",
-  cancelButtonText: "No",
+  confirmButtonText: $(e).data('yes'),
+  cancelButtonText: $(e).data('no'),
   closeOnConfirm: true,
   closeOnCancel: true,
  // showLoaderOnConfirm: true
@@ -246,12 +269,12 @@ function(isConfirm) {
                    preLoadshow(false);
                   if(res.status=='success'){
                    
-                    toastr.success(res.message, 'Success', {timeOut: 3000});
+                    toastr.success(res.message, Success, {timeOut: 3000});
                   // swal("Success", "Your process  has been successfully done.", "success");
                   
                    setTimeout(function(){ location.reload(); },4000);
                   }else{
-                    toastr.error(res.message, 'Alert!', {timeOut: 5000});
+                    toastr.error(res.message,Alert, {timeOut: 5000});
                   }
                   
                      

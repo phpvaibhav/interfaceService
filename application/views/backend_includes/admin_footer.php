@@ -9,7 +9,7 @@
     <div class="page-footer">
       <div class="row">
         <div class="col-xs-12 col-sm-6">
-          <span class="txt-color-white">1.0.0 <span class="hidden-xs"> - Web Application</span><?php echo COPYRIGHT; ?></span>
+          <span class="txt-color-white">1.0.0 <span class="hidden-xs"> - <?= lang('Web_Application');?></span><?php echo COPYRIGHT.lang('All_rights_reserved'); ?></span>
         </div>
 
         <div class="col-xs-6 col-sm-6 text-right hidden-xs">
@@ -82,10 +82,10 @@
           <a href="gallery.html" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
         </li> -->
         <li>
-          <a href="<?php echo base_url().'users/userDetail/'.encoding($user['userId']);  ?>" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My Profile </span> </span> </a>
+          <a href="<?php echo base_url().'users/userDetail/'.encoding($user['userId']);  ?>" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span><?= lang('My_Profile');?></span> </span> </a>
         </li>  
         <li>
-          <a href="<?php echo base_url().'users/changePassword/'.encoding($user['userId']);  ?>" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-key fa-4x"></i> <span>Change Password</span> </span> </a>
+          <a href="<?php echo base_url().'users/changePassword/'.encoding($user['userId']);  ?>" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-key fa-4x"></i> <span><?= lang('Change_password');?></span> </span> </a>
         </li>
       </ul>
     </div>
@@ -109,6 +109,7 @@
       if (!window.jQuery.ui) {
         document.write('<script src="<?php echo $backend_assets ?>js/libs/jquery-ui.min.js"><\/script>');
       }
+      var logout ="<?= lang('Logout');?>";
     </script>
 
     <!-- IMPORTANT: APP CONFIG -->
@@ -178,7 +179,40 @@
 <script src="<?php echo $backend_assets ?>plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?php echo $backend_assets ?>plugins/datatables/dataTables.bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
-
+<script type="text/javascript">
+  var email_req ="<?php echo lang('please_enter_your_email_address');  ?>";
+  var valid_email_req ="<?php echo lang('please_enter_a_valid_email_address');  ?>";
+  var password_req ="<?php echo lang('please_enter_your_password');  ?>";
+  var please_enter_your_full_name  = "<?= lang('please_enter_your_full_name');?>";
+  var please_enter_your_email_address  = "<?= lang('please_enter_your_email_address');?>";
+  var please_enter_a_valid_email_address  = "<?= lang('please_enter_a_valid_email_address');?>";
+  var please_enter_password  = "<?= lang('please_enter_password');?>";
+  var please_enter_password_limit  = "<?= lang('please_enter_password_limit');?>";
+  var please_re_enter_your_password  = "<?= lang('please_re_enter_your_password');?>";
+  var please_re_enter_wrong_password  = "<?= lang('please_re_enter_wrong_password');?>";
+  var please_enter_your_contact_number  = "<?= lang('please_enter_your_contact_number');?>";
+  var please_enter_your_shipping_address  = "<?= lang('please_enter_your_shipping_address');?>";
+  var please_enter_your_vat_number  = "<?= lang('please_enter_your_vat_number');?>";
+  var please_enter_your_current_password  = "<?= lang('please_enter_your_current_password');?>";
+  var please_enter_your_new_password  = "<?= lang('please_enter_your_new_password');?>";
+  var No_service_found  = "<?= lang('No_service_found');?>";
+  var No_customer_found  = "<?= lang('No_customer_found');?>";
+  var Showing_START_to_END_of_TOTAL_records  = "<?= lang('Showing_START_to_END_of_TOTAL_records');?>";
+  var Showing_0_to_0_of_0_records  = "<?= lang('Showing_0_to_0_of_0_records');?>";
+  var filtered_from_MAX_total_records  = "<?= lang('filtered_from_MAX_total_records');?>";
+  var First  = "<?= lang('First');?>";
+  var Last  = "<?= lang('Last');?>";
+  var Next  = "<?= lang('Next');?>";
+  var Previous  = "<?= lang('Previous');?>";
+  var You_can_select_only_4_receipt  = "<?= lang('You_can_select_only_4_receipt');?>";
+  var Please_enter_your_product_name  = "<?= lang('Please_enter_your_product_name');?>";
+  var Please_enter_your_manufacture  = "<?= lang('Please_enter_your_manufacture');?>";
+  var Please_enter_your_model_name  = "<?= lang('Please_enter_your_model_name');?>";
+  var Please_enter_your_product_series_number  = "<?= lang('Please_enter_your_product_series_number');?>";
+  var Please_select_your_product_date_of_purchase  = "<?= lang('Please_select_your_product_date_of_purchase');?>";
+  var Please_enter_your_contact_number  = "<?= lang('Please_enter_your_contact_number');?>";
+  var Please_enter_your_fault_description  = "<?= lang('Please_enter_your_fault_description');?>";
+</script>
  <script src="<?php echo $backend_assets; ?>custom/js/listing.js"></script>
  <script src="<?php echo $backend_assets; ?>custom/js/custom.js"></script>
 

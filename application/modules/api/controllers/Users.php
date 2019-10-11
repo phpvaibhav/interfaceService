@@ -28,20 +28,21 @@ class Users extends Common_Service_Controller{
         $row[] = display_placeholder_text($serData->email); 
         $row[] = display_placeholder_text($serData->contactNumber); 
         if($serData->status){
-        $row[] = '<label class="label label-success">'.$serData->statusShow.'</label>';
+        $row[] = '<label class="label label-success">'.lang($serData->statusShow).'</label>';
         }else{ 
-        $row[] = '<label class="label label-danger">'.$serData->statusShow.'</label>'; 
+        $row[] = '<label class="label label-danger">'.lang($serData->statusShow).'</label>'; 
         } 
             $link  ='javascript:void(0)';
+           
             $action .= "";
         if($serData->status){
 
-            $action .= '<a href="'.$link.'" onclick="statusChangeuser(this);" data-message="You want to change status!" data-useid="'.encoding($serData->id).'"  class="on-default edit-row table_action" title="status"><i class="fa fa-check" aria-hidden="true"></i></a>&nbsp;&nbsp;|';
+            $action .= '<a href="'.$link.'" onclick="statusChangeuser(this);" data-message="'.lang('You_want_to_change_status').'" data-useid="'.encoding($serData->id).'"  class="on-default edit-row table_action" title="status" data-title="'.lang('Are_you_sure').'" data-yes="'.lang('Yes').'" data-no="'.lang('No').'" ><i class="fa fa-check" aria-hidden="true"></i></a>&nbsp;&nbsp;|';
         }else{
-             $action .= '&nbsp;&nbsp;<a href="'.$link.'" onclick="statusChangeuser(this);" data-message="You want to change status!" data-useid="'.encoding($serData->id).'"  class="on-default edit-row table_action" title="status"><i class="fa fa-times" aria-hidden="true"></i></a>&nbsp;&nbsp;|';
+             $action .= '&nbsp;&nbsp;<a href="'.$link.'" onclick="statusChangeuser(this);" data-message="'.lang('You_want_to_change_status').'" data-useid="'.encoding($serData->id).'"  class="on-default edit-row table_action" title="status" data-title="'.lang('Are_you_sure').'" data-yes="'.lang('Yes').'" data-no="'.lang('No').'" ><i class="fa fa-times" aria-hidden="true"></i></a>&nbsp;&nbsp;|';
         }
         $userLink = base_url().'users/userDetail/'.encoding($serData->id);
-        $action .= '&nbsp;&nbsp;<a href="'.$userLink.'"  class="on-default edit-row table_action" title="Detail"><i class="fa fa-eye" aria-hidden="true"></i></a>';
+        $action .= '&nbsp;&nbsp;<a href="'.$userLink.'"  class="on-default edit-row table_action" title="'.lang('Detail').'"><i class="fa fa-eye" aria-hidden="true"></i></a>';
           /*  $action .= '<a href="'.$link.'" onclick="statusChange(this);" data-message="You want to change status!" data-serid="'.encoding($serData->serviceId).'" data-sid="'.encoding($applyStatus).'"  class="on-default edit-row table_action" title="View user">'.$applyMsg.'</a>';*/
              
             // $clk_edit =  "editFn('admin/categoryCtrl','editGenres','$usersData->id');" ;
@@ -71,7 +72,7 @@ class Users extends Common_Service_Controller{
             $status = $dataExist->status ?0:1;
 
              $dataExist=$this->common_model->updateFields('users',array('status'=>$status),$where);
-              $showmsg  =($status==1)? "User request is Active" : "User request is Inactive";
+              $showmsg  =($status==1)? lang('User_request_is_Active') : lang('User_request_is_Inactive');
                 $response = array('status'=>SUCCESS,'message'=>$showmsg);
         }else{
            $response = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
@@ -107,16 +108,16 @@ class Users extends Common_Service_Controller{
                 if($update){
                     $res = array();
                     if($update){
-                        $response = array('status' =>SUCCESS, 'message' => 'Successfully Updated', 'url' => base_url('users/userDetail'));
+                        $response = array('status' =>SUCCESS, 'message' => ResponseMessages::getStatusCodeMessage(123), 'url' => base_url('users/userDetail'));
                     }
                     else{
-                         $response = array('status' => FAIL, 'message' => 'Failed! Please try again', 'url' => base_url('users/userDetail'));
+                         $response = array('status' => FAIL, 'message' => ResponseMessages::getStatusCodeMessage(118), 'url' => base_url('users/userDetail'));
                         
                     }
                     
                 } 
             }else{
-                 $response = array('status' =>FAIL, 'message' => 'Your Current Password is Wrong !', 'url' => base_url('users/userDetail'));                 
+                 $response = array('status' =>FAIL, 'message' => lang('Your_Current_Password_is_Wrong'), 'url' => base_url('users/userDetail'));                 
             }
         }
        $this->response($response);
@@ -163,7 +164,7 @@ class Users extends Common_Service_Controller{
 
                         //check for error
                         if(array_key_exists("error",$image) && !empty($image['error'])){
-                            $response = array('status' => FAIL, 'message' => strip_tags($image['error'].'(In user Image)'));
+                            $response = array('status' => FAIL, 'message' => strip_tags($image['error']));
                            $this->response($response);die;
                         }
 

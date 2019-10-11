@@ -24,7 +24,7 @@
 				-->
 				<header>
 					<span class="widget-icon"> <i class="fa fa-cog"></i> </span>
-					<h2>Service</h2>
+					<h2><?= lang('Services');?></h2>
 
 				</header>
 
@@ -46,15 +46,15 @@
 								<thead>			                
 									<tr>
 										<th data-hide="phone">ID</th>
-										<th data-class="expand">Product Name</th>
-										<th data-hide="phone">Manufacture</th>
-										<th data-hide="phone">Model Name</th>
-										<th data-hide="phone,tablet">Series Number</th>
-										<th data-hide="phone,tablet">Date of Purchase</th>
-										<th data-hide="phone,tablet">Contact Number</th>
-										<th>Fault Description</th>
-										<th data-hide="phone,tablet">Status</th>
-										<th data-hide="phone,tablet">Action</th>
+										<th data-class="expand"><?= lang('Product_Name'); ?></th>
+										<th data-hide="phone"><?= lang('Manufacture');?></th>
+										<th data-hide="phone"><?= lang('Model_name');?></th>
+										<th data-hide="phone,tablet"><?= lang('Series_Number');?></th>
+										<th data-hide="phone,tablet"><?= lang('Date_of_Purchase');?></th>
+										<th data-hide="phone,tablet"><?= lang('Contact_Number'); ?></th>
+										<th><?= lang('Fault_Description'); ?></th>
+										<th data-hide="phone,tablet"><?= lang('Status'); ?></th>
+										<th data-hide="phone,tablet"><?= lang('Action'); ?></th>
 										
 									</tr>
 								</thead>

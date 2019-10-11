@@ -8,25 +8,25 @@
 
 			<form method="post" action="changePassword" id="smart-form-changepass" class="smart-form client-form" enctype="multipart/form-data" novalidate autocomplete="off">
 			<header>
-				Change Password
+				<?= lang('Change_password');?>
 			</header>
 
 			<fieldset>
 				<section>
 					<label class="input"> <i class="icon-append fa fa-lock"></i>
-						<input type="password" name="password" placeholder="Current Password" id="password" autocomplete="new-password">
-						<b class="tooltip tooltip-bottom-right">Please enter your current password</b> </label>
+						<input type="password" name="password" placeholder="<?= lang('Change_password');?>" id="password" autocomplete="new-password">
+						<b class="tooltip tooltip-bottom-right"><?= lang('please_enter_your_current_password');?></b> </label>
 				</section>
 				<section>
 				<label class="input"> <i class="icon-append fa fa-lock"></i>
-					<input type="password" name="npassword" id="npassword" placeholder="Password">
-					<b class="tooltip tooltip-bottom-right">Please enter your new password</b> </label>
+					<input type="password" name="npassword" id="npassword" placeholder="<?= lang('password');?>">
+					<b class="tooltip tooltip-bottom-right"><?= lang('please_enter_your_new_password'); ?></b> </label>
 				</section>
 
 				<section>
 					<label class="input"> <i class="icon-append fa fa-lock"></i>
-						<input type="password" name="rnpassword" placeholder="Confirm password">
-						<b class="tooltip tooltip-bottom-right">Please re-enter your password</b> </label>
+						<input type="password" name="rnpassword" placeholder="<?= lang('confirm_password'); ?>">
+						<b class="tooltip tooltip-bottom-right"><?= lang('please_re_enter_your_password');?></b> </label>
 				</section>
 				
 				
@@ -36,7 +36,7 @@
 			</fieldset>
 			<footer>
 				<button type="submit" id="submit" class="btn btn-primary">
-					Change
+					<?= lang('Change');?>
 				</button>
 			</footer>
 
