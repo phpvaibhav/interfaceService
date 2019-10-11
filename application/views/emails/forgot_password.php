@@ -14,7 +14,7 @@
                 <table width="100%" border="0" cellpadding="30" cellspacing="0">    
                     <tr>
                         <td>
-                            <img style="max-width: 125px; width: 100%;padding: 10px;"  src="<?php echo base_url(); ?>backend_assets/img/logo-o.png" >
+                            <img style="max-width: 125px; width: 100%;padding: 10px;"  src="<?php echo base_url(); ?>backend_assets/img/logo.png" >
                         </td>
                     </tr>
                 </table>
@@ -27,9 +27,9 @@
                     <tr>
                         <td>
 
-                            <h3 style="color: #333; font-size: 28px; font-weight: normal; margin: 0; text-transform: capitalize;">Forgot Password</h3>
-                            <p style="text-align: left; color: #333; font-size: 16px; line-height: 28px;">Hello, <?php echo $full_name; ?></p>
-                            <p style="text-align: left;color: #333; font-size: 16px; line-height: 28px;">You recently requested to reset your password for your interface account. Please click on button to reset your password: </p>
+                            <h3 style="color: #333; font-size: 28px; font-weight: normal; margin: 0; text-transform: capitalize;"><?= lang('forgot_password'); ?></h3>
+                            <p style="text-align: left; color: #333; font-size: 16px; line-height: 28px;"><?= lang('Hello'); ?><?= lang('Hello'); ?>, <?php echo $full_name; ?></p>
+                            <p style="text-align: left;color: #333; font-size: 16px; line-height: 28px;"><?= lang('forgot_title_msg');?></p>
                             <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
                         <tr>
                           <td align="center">
@@ -41,7 +41,7 @@
                                   <table border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                       <td>
-                                        <a style="border: 10px #dd4b39 solid;background:#dd4b39;color: white;text-decoration: none;" class="button button--green" href="<?php echo $url; ?>">Forgot Password</a>
+                                        <a style="border: 10px #dd4b39 solid;background:#dd4b39;color: white;text-decoration: none;" class="button button--green" href="<?php echo $url; ?>"><?= lang('forgot_password'); ?></a>
                                       </td>
                                     </tr>
                                   </table>
@@ -52,9 +52,9 @@
                         </tr>
                       </table>
                             
-                            <p style="text-align: left;color: #333; font-size: 16px; line-height: 28px;">If you didn't generate this link, don't worry. You can login with your old password. This link is only for one time use.</p>  
+                            <p style="text-align: left;color: #333; font-size: 16px; line-height: 28px;"><?= lang('forgot_title_msg_more');?></p>  
 
-                            <p style="text-align: left;color: #333; font-size: 16px; line-height: 28px;">Thanks,<br><?php echo SITE_NAME; ?> team</p>  
+                            <p style="text-align: left;color: #333; font-size: 16px; line-height: 28px;"><?= lang('Thanks');?>,<br><?php echo SITE_NAME; ?> team</p>  
                         </td>
                     </tr>
                 </table>

@@ -171,7 +171,7 @@ class Api_model extends CI_Model {
       
             $message=$this->load->view('emails/forgot_password',$data,TRUE);
 
-            $subject = "Forgot Password";
+            $subject = lang('forgot_password');
 
             $this->load->library('smtp_email');
             $response=$this->smtp_email->send_mail($useremail,$subject,$message); // Send email For Forgot password

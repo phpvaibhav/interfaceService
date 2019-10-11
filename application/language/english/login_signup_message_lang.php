@@ -47,6 +47,10 @@ $lang['please_check_your_mail_to_reset_your_password'] = "Please check your mail
 $lang['please_enter_your_current_password'] = "Please enter your current password";
 $lang['please_enter_your_new_password'] = "Please enter your new password";
 $lang['All_rights_reserved'] = "All rights reserved.";
+$lang['Hello'] = "Hello";
+$lang['forgot_title_msg'] = "You recently requested to reset your password for your interface account. Please click on button to reset your password:";
+$lang['forgot_title_msg_more'] = "If you didn't generate this link, don't worry. You can login with your old password. This link is only for one time use.";
+$lang['Thanks'] = "Thanks";
 
 
 

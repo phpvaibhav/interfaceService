@@ -47,6 +47,10 @@ $lang['please_check_your_mail_to_reset_your_password'] = "Vennligst sjekk e-post
 $lang['please_enter_your_current_password'] = "Vennligst tast inn ditt nåværende passord";
 $lang['please_enter_your_new_password'] = "Please enter your new password";
 $lang['All_rights_reserved'] = "Alle rettigheter forbeholdt.";
+$lang['Hello'] = "Hallo";
+$lang['forgot_title_msg'] = "Du har nylig bedt om å tilbakestille passordet ditt for grensesnittkontoen. Klikk på knappen for å tilbakestille passordet ditt:";
+$lang['forgot_title_msg_more'] = "Hvis du ikke genererte denne koblingen, ikke bekymre deg. Du kan logge inn med det gamle passordet ditt. Denne lenken er kun til engangsbruk.";
+$lang['Thanks'] = "Takk";
 
 
 
