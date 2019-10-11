@@ -27,7 +27,7 @@
                     <tr>
                         <td>
 
-                            <h3 style="color: #333; font-size: 28px; font-weight: normal; margin: 0; text-transform: capitalize;"><?= lang('forgot_password'); ?></h3>
+                            <h3 style="color: #333; font-size: 28px; font-weight: normal; margin: 0; text-transform: capitalize;"><?= lang('forgot_password_title'); ?></h3>
                             <p style="text-align: left; color: #333; font-size: 16px; line-height: 28px;"><?= lang('Hello'); ?><?= lang('Hello'); ?>, <?php echo $full_name; ?></p>
                             <p style="text-align: left;color: #333; font-size: 16px; line-height: 28px;"><?= lang('forgot_title_msg');?></p>
                             <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
@@ -41,7 +41,7 @@
                                   <table border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                       <td>
-                                        <a style="border: 10px #dd4b39 solid;background:#dd4b39;color: white;text-decoration: none;" class="button button--green" href="<?php echo $url; ?>"><?= lang('forgot_password'); ?></a>
+                                        <a style="border: 10px #dd4b39 solid;background:#dd4b39;color: white;text-decoration: none;" class="button button--green" href="<?php echo $url; ?>"><?= lang('forgot_password_title'); ?></a>
                                       </td>
                                     </tr>
                                   </table>
