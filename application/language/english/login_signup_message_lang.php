@@ -51,6 +51,7 @@ $lang['Hello'] = "Hello";
 $lang['forgot_title_msg'] = "You recently requested to reset your password for your interface account. Please click on button to reset your password:";
 $lang['forgot_title_msg_more'] = "If you didn't generate this link, don't worry. You can login with your old password. This link is only for one time use.";
 $lang['Thanks'] = "Thanks";
+$lang['Reset_Password'] = "Reset Password";
 
 
 

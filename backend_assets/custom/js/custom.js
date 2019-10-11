@@ -619,26 +619,26 @@ $(document).on('submit', "#smart-form-updateuser", function (event) {
         password: {
           required: true,
           minlength: 6,
-          maxlength: 15,
+         // maxlength: 15,
         },
         cpassword: {
            required: true,  
-         minlength: 6,
-           maxlength: 15,
+         minlength: 3,
+         //  maxlength: 15,
          equalTo: "#password",
        }
       },
       messages: {
         password:{
-               required: "Please enter password.",
-               minlength: "Password should have minimum 6 characters.",
+               required: please_enter_your_password,
+               minlength: please_enter_password_limit,
                maxlength: "Password should have Maxlength 15 characters.",
         }, 
         cpassword:{ 
-          required:"Please enter confirm password.",
-          minlength: "Confirm password should have minimum 6 characters.",
+          required: please_re_enter_your_password,
+          minlength: please_enter_password_limit,
                 maxlength: "Confirm password should have Maxlength 15 characters.",
-          equalTo:"Confirm password does not match.",
+          equalTo: please_re_enter_wrong_password,
 
         }
       },

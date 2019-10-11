@@ -8,27 +8,27 @@
             <div class="well no-padding">
               <form  id="addFormAjax"  method="post" action="<?php echo base_url('password/ChangePassword/update_password') ?>" enctype="multipart/form-data" class="smart-form client-form">
                 <header>
-                 Change Password
+                 <?= lang('Reset_Password');?>
                 </header>
 
                 <fieldset>
                   <section>
-                    <label class="label">Password</label>
+                    <label class="label"><?= lang('password'); ?></label>
                     <label class="input"> <i class="icon-append fa fa-lock"></i>
                       <input type="password" id="password" name="password" class="disablecopypaste">
                       <input type="hidden" name="e" value="<?php echo $encode_email; ?>">
-                      <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter your password</b> </label>
+                      <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> <?= lang('please_enter_your_password');?></b> </label>
                   </section>
                   <section>
-                    <label class="label">Confirm Password</label>
+                    <label class="label"><?= lang('confirm_password'); ?></label>
                     <label class="input"> <i class="icon-append fa fa-lock"></i>
                     <input type="password" id="cpassword" name="cpassword" class="disablecopypaste">
-                    <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter your confirm password</b> </label>
+                    <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> <?= lang('please_re_enter_your_password');?></b> </label>
                   </section>
                 </fieldset>
                 <footer>
                   <button type="submit" id="submit" class="btn btn-primary">
-                    Change
+                    <?= lang('Change');?>
                   </button>
                 </footer>
               </form>

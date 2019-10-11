@@ -51,6 +51,7 @@ $lang['Hello'] = "Hallo";
 $lang['forgot_title_msg'] = "Du har nylig bedt om å tilbakestille passordet ditt for grensesnittkontoen. Klikk på knappen for å tilbakestille passordet ditt:";
 $lang['forgot_title_msg_more'] = "Hvis du ikke genererte denne koblingen, ikke bekymre deg. Du kan logge inn med det gamle passordet ditt. Denne lenken er kun til engangsbruk.";
 $lang['Thanks'] = "Takk";
+$lang['Reset_Password'] = "Tilbakestille passord";
 
 
 
