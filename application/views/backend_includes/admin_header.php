@@ -214,9 +214,9 @@
             </ul> 
           </li>
           <?php if(isset($user['userType'])&& $user['userType']==1): ?>
-      <li class="<?php echo (strtolower($this->router->fetch_class()) == "users") ? "active open" : "" ?>">
-            <a href="<?php echo base_url().'users'; ?>" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
-          </li> 
+            <li class="<?php echo (strtolower($this->router->fetch_class()) == "users") ? "active open" : "" ?>">
+              <a href="<?php echo base_url().'users'; ?>" title="<?= lang('Users');?>"><i class="fa fa-lg fa-fw fa-users"></i> <span class="menu-item-parent"><?= lang('Users');?></span></a>
+            </li> 
         <?php endif; ?>
         </ul>
       </nav>

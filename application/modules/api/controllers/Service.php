@@ -26,15 +26,15 @@ class Service extends Common_Service_Controller{
         }
         else{
         	 $data_val = array();
-        	 $data_val['productName'] 	= $this->post('productName');
-        	 $data_val['vendor'] 		= $this->post('vendor');
-             $data_val['modelName']        = $this->post('modelName');
-        	 $data_val['serialNumber'] 	= $this->post('serialNumber');
-        	 $purchaseDate 				= $this->post('purchaseDate');
-        	 $data_val['purchaseDate'] 	= date('Y-m-d',strtotime($purchaseDate));
-        	 $data_val['faultDescription'] 		= $this->post('faultDescription');
-        	 $data_val['contactNumber'] = $this->post('contactNumber');
-        	 $data_val['userId'] = $userId;
+        	 $data_val['productName'] 	    = $this->post('productName');
+        	 $data_val['vendor'] 		    = $this->post('vendor');
+             $data_val['modelName']         = $this->post('modelName');
+        	 $data_val['serialNumber'] 	    = $this->post('serialNumber');
+        	 $purchaseDate 				    = $this->post('purchaseDate');
+        	 $data_val['purchaseDate'] 	    = date('Y-m-d',strtotime($purchaseDate));
+        	 $data_val['faultDescription']  = $this->post('faultDescription');
+        	 $data_val['contactNumber']     = $this->post('contactNumber');
+        	 $data_val['userId']            = $userId;
           
             // profile pic upload
             $this->load->model('image_model');
@@ -42,8 +42,8 @@ class Service extends Common_Service_Controller{
            $serviceImage = $images= array();
         //   pr($_FILES);
             if (!empty($_FILES['serviceImage']['name'])) {
-                $folder     = 'service';
-                $images      = $this->image_model->updateGallery('serviceImage',$folder); //upload media of Seller
+                $folder         = 'service';
+                $images         = $this->image_model->updateGallery('serviceImage',$folder); //upload media of Seller
              
                 //check for error
             /*    if(array_key_exists("error",$image) && !empty($image['error'])){
@@ -68,8 +68,8 @@ class Service extends Common_Service_Controller{
                     for ($i=0; $i <sizeof($images) ; $i++) { 
                         if(isset($images[$i]['name']) && isset($images[$i]['type'])):
                             $imageType = explode("/",$images[$i]['type']);
-                            $serviceImage[$j]['image'] =  $images[$i]['name'];
-                            $serviceImage[$j]['type'] =  isset($imageType[0]) ?$imageType[0]:'image';
+                            $serviceImage[$j]['image']  =  $images[$i]['name'];
+                            $serviceImage[$j]['type']   =  isset($imageType[0]) ?$imageType[0]:'image';
                             $serviceImage[$j]['serviceId'] =  $result;
                             $j++;
                         endif;

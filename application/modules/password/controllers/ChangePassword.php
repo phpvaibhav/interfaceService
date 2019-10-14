@@ -42,7 +42,7 @@ class ChangePassword extends Common_Back_Controller {
             $messages = (validation_errors()) ? validation_errors() : '';
             $response = array('status' => 0, 'message' => $messages);
         }else{
-            $changetype= $this->input->post('changetype');
+            $changetype     = $this->input->post('changetype');
             $update_data = array(
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
                 'passToken' => "",

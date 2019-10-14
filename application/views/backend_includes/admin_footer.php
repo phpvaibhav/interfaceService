@@ -212,6 +212,7 @@
   var Please_select_your_product_date_of_purchase  = "<?= lang('Please_select_your_product_date_of_purchase');?>";
   var Please_enter_your_contact_number  = "<?= lang('Please_enter_your_contact_number');?>";
   var Please_enter_your_fault_description  = "<?= lang('Please_enter_your_fault_description');?>";
+  var please_enter_your_password  = "<?= lang('please_enter_your_password');?>";
 </script>
  <script src="<?php echo $backend_assets; ?>custom/js/listing.js"></script>
  <script src="<?php echo $backend_assets; ?>custom/js/custom.js"></script>

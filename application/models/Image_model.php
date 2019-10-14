@@ -98,13 +98,13 @@ class Image_model extends CI_Model{
 
             $real_path = realpath(FCPATH .$realpath .$folder);
 
-            $resize['image_library']      = 'gd2';
-            $resize['source_image']       = $image_data['full_path'];
-            $resize['new_image'] 	      = $real_path.$v['folder'].'/'.$image_data['file_name'];
-            $resize['maintain_ratio']     = FALSE;
-            $resize['width'] 	      = $v['width'];
-            $resize['height'] 	      = $v['height'];
-            $resize['quality'] 	      = '100%';
+            $resize['image_library']    = 'gd2';
+            $resize['source_image']     = $image_data['full_path'];
+            $resize['new_image'] 	    = $real_path.$v['folder'].'/'.$image_data['file_name'];
+            $resize['maintain_ratio']   = FALSE;
+            $resize['width'] 	        = $v['width'];
+            $resize['height'] 	        = $v['height'];
+            $resize['quality'] 	        = '100%';
 
             $this->image_lib->initialize($resize);
             $this->image_lib->resize();   //create resized copies
@@ -114,10 +114,10 @@ class Image_model extends CI_Model{
         $real_path = realpath(FCPATH .$realpath .$folder);
 
         $resize1['source_image'] 	= $image_data['full_path'];
-        $resize1['new_image'] 	= $real_path.$large.'/'.$image_data['file_name'];
+        $resize1['new_image'] 	    = $real_path.$large.'/'.$image_data['file_name'];
         $resize1['maintain_ratio'] 	= FALSE;
         $resize1['width']           = $width;
-        $resize1['height'] 		= $height;
+        $resize1['height'] 		    = $height;
         $resize1['quality']         = '100%';
 
         $this->image_lib->initialize($resize1);
@@ -137,7 +137,7 @@ class Image_model extends CI_Model{
         $main   = $path.$file;
         $thumb  = $path.'thumb/'.$file;
         $medium = $path.'medium/'.$file;
-        $large = $path.'large/'.$file;
+        $large  = $path.'large/'.$file;
 
         if(file_exists(FCPATH.$main)):
             unlink( FCPATH.$main);

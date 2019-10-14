@@ -13,38 +13,38 @@
   }
 
   function index(){
-   $subject = 'New Service';
-        $email   =  "vaibhavsharma.otc@gmail.com";
-        $urlMail            = base_url()."manage/mailSent";
-        $maildata['full_name'] ="test demo";
-        $maildata['title'] ="test demo";
-        $maildata['message'] ="mail send successfully";
-      
-            $message=$this->load->view('emails/forgot_password',$maildata,TRUE);
+    $subject      = 'New Service';
+    $email        =  "vaibhavsharma.otc@gmail.com";
+    $urlMail      = base_url()."manage/mailSent";
+    $maildata['full_name']  = "test demo";
+    $maildata['title']      = "test demo";
+    $maildata['message']    = "mail send successfully";
 
-            $subject = "Forgot Password";
+    $message  = $this->load->view('emails/forgot_password',$maildata,TRUE);
 
-            $this->load->library('smtp_email');
-            $response=$this->smtp_email->send_mail($email,$subject,$message); // Send email For Forgot password
-            print_r($response);
-            if ($response)
-            {  
+    $subject  = "Forgot Password";
 
-                echo  "ES emailSend";
-            }
-            else
-            { 
-                  echo  "NS NotSend"; //NS NotSend
-            }
+    $this->load->library('smtp_email');
+    $response=$this->smtp_email->send_mail($email,$subject,$message); // Send email For Forgot password
+    print_r($response);
+    if ($response)
+    {  
+
+        echo  "ES emailSend";
+    }
+    else
+    { 
+          echo  "NS NotSend"; //NS NotSend
+    }
   } 
   function test(){
     $this->load->library('background');
-        $subject = 'New Service background';
-        $email   =  "vaibhavsharma.otc@gmail.com";
-        $urlMail            = base_url()."manage/mailSent";
-        $maildata['title'] ="test demo";
-        $maildata['message'] ="mail send successfully";
-        $paramMail = array('email' =>$email,'subject' =>$subject,'path'=>'email','msg'=>$maildata);
+        $subject              = 'New Service background';
+        $email                = "vaibhavsharma.otc@gmail.com";
+        $urlMail              = base_url()."manage/mailSent";
+        $maildata['title']    = "test demo";
+        $maildata['message']  = "mail send successfully";
+        $paramMail = array('email' => $email,'subject' => $subject,'path'=> 'email','msg'=> $maildata);
 
         $s= $this->background->do_in_background($urlMail, $paramMail);print_r($s);
         echo "done";

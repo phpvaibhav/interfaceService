@@ -44,7 +44,7 @@ class Admin extends Common_Back_Controller {
     public function dashboard() {
         redirect('service',true);
         $data['parent'] = "Dashboard";
-        $data['title'] = "Dashboard";
+        $data['title']  = "Dashboard";
         
         $this->load->admin_render('dashboard', $data, '');
     }
@@ -52,9 +52,9 @@ class Admin extends Common_Back_Controller {
       //view admin profile
     public function admin_profile(){
 
-        $data['title'] = "Admin profile";
-        $where = array('id'=>$_SESSION[ADMIN_USER_SESS_KEY]['id']);
-        $result = $this->common_model->getsingle(ADMIN,$where);
+        $data['title']  = "Admin profile";
+        $where          = array('id'=>$_SESSION[ADMIN_USER_SESS_KEY]['id']);
+        $result         = $this->common_model->getsingle(ADMIN,$where);
         $data['userData'] = $result;
         $this->load->admin_render('admin_profile', $data, '');
     }

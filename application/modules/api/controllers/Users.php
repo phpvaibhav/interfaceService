@@ -7,30 +7,30 @@ class Users extends Common_Service_Controller{
     }
     function userList_post(){
         
-        $authCheck = $this->check_service_auth();
-        $authToken = $this->authData->authToken;
-        $userId = $this->authData->id;
-        $userType = $this->authData->userType;
+        $authCheck  = $this->check_service_auth();
+        $authToken  = $this->authData->authToken;
+        $userId     = $this->authData->id;
+        $userType   = $this->authData->userType;
         $this->load->helper('text');
         $this->load->model('user_model');
         ($userType ==1)?$this->user_model->set_data(array('userType'=>2)):"";
         $list = $this->user_model->get_list();
         
-        $data = array();
-        $no = $_POST['start'];
+        $data   = array();
+        $no     = $_POST['start'];
         foreach ($list as $serData) { 
         $action ='';
         $no++;
-        $row = array();
-        $row[] = $no;
-        $row[] = '<img src='.base_url($serData->profileImage).' alt="user profile" style="height:50px;width:50px;" >';
-        $row[] = display_placeholder_text($serData->fullName); 
-        $row[] = display_placeholder_text($serData->email); 
-        $row[] = display_placeholder_text($serData->contactNumber); 
+        $row    = array();
+        $row[]  = $no;
+        $row[]  = '<img src='.base_url($serData->profileImage).' alt="user profile" style="height:50px;width:50px;" >';
+        $row[]  = display_placeholder_text($serData->fullName); 
+        $row[]  = display_placeholder_text($serData->email); 
+        $row[]  = display_placeholder_text($serData->contactNumber); 
         if($serData->status){
-        $row[] = '<label class="label label-success">'.lang($serData->statusShow).'</label>';
+        $row[]  = '<label class="label label-success">'.lang($serData->statusShow).'</label>';
         }else{ 
-        $row[] = '<label class="label label-danger">'.lang($serData->statusShow).'</label>'; 
+        $row[]  = '<label class="label label-danger">'.lang($serData->statusShow).'</label>'; 
         } 
             $link  ='javascript:void(0)';
            
@@ -64,9 +64,9 @@ class Users extends Common_Service_Controller{
         $this->response($output);
     } //End Function
     function changeStatus_post(){
-        $userId  = decoding($this->post('use'));
+        $userId     = decoding($this->post('use'));
     
-        $where = array('id'=>$userId);
+        $where      = array('id'=>$userId);
          $dataExist=$this->common_model->is_data_exists('users',$where);
         if($dataExist){
             $status = $dataExist->status ?0:1;
@@ -82,9 +82,9 @@ class Users extends Common_Service_Controller{
         public function changePassword_post()
     {
 
-        $authCheck = $this->check_service_auth();
-        $authToken = $this->authData->authToken;
-        $userId = $this->authData->id;
+        $authCheck  = $this->check_service_auth();
+        $authToken  = $this->authData->authToken;
+        $userId     = $this->authData->id;
         $this->load->library('form_validation');
         $this->form_validation->set_rules('password', 'password', 'trim|required|min_length[6]');
         $this->form_validation->set_rules('npassword', 'new password', 'trim|required|matches[rnpassword]|min_length[6]');
@@ -136,23 +136,23 @@ class Users extends Common_Service_Controller{
         }
         else{
         
-            $userid          =  $this->post('userauth');
-            $userauth          =  decoding($userid);
-            $email          =  $this->post('email');
-            $fullName       =  $this->post('fullName');
+            $userid             =  $this->post('userauth');
+            $userauth           =  decoding($userid);
+            $email              =  $this->post('email');
+            $fullName           =  $this->post('fullName');
           
             $isExist = $this->common_model->is_data_exists('users',array('id'=>$userauth));
             if($isExist){
                 $isExistEmail = $this->common_model->is_data_exists('users',array('id  !='=>$userauth,'email'=>$email));
                 if(!$isExistEmail){
                     //update
-                              //user info
-                        $userData['fullName']           =   $fullName;
-                        $userData['email']              =   $email;
-                        $userData['contactNumber']      =   $this->post('contact');
-                            $userData['shippingAddress']      =   $this->post('shippingAddress');
-                $userData['vatNumber']      =   $this->post('vatNumber');
-                $userData['invoiceDetail']      =   $this->post('invoiceDetail');
+                        //user info
+                        $userData['fullName']               =   $fullName;
+                        $userData['email']                  =   $email;
+                        $userData['contactNumber']          =   $this->post('contact');
+                        $userData['shippingAddress']        =   $this->post('shippingAddress');
+                        $userData['vatNumber']              =   $this->post('vatNumber');
+                        $userData['invoiceDetail']          =   $this->post('invoiceDetail');
                         //user info
                         // profile pic upload
                         $this->load->model('Image_model');

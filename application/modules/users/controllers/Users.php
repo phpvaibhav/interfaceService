@@ -19,27 +19,26 @@ class Users extends Common_Back_Controller {
     } 
     public function add_user() { 
         
-        $data['title'] =   lang('Users');
+        $data['title'] = lang('Users');
         $this->load->admin_render('add_user', $data);
     }
     public function userDetail(){
-      //pr('admin@admin.com');
+    
         $userId  = decoding($this->uri->segment(3));
 
-        $data['title'] = lang('Profile');
-        $where = array('id'=>$userId);
-        $result = $this->common_model->getsingle('users',$where);
-        $data['userData'] = $result;
+        $data['title']      = lang('Profile');
+        $where              = array('id'=>$userId);
+        $result             = $this->common_model->getsingle('users',$where);
+        $data['userData']   = $result;
         $this->load->admin_render('userDetail', $data, '');
     } 
     public function changePassword(){
         
-        $userId  = decoding($this->uri->segment(3));
-
-        $data['title'] =  lang('Change_password');
-        $where = array('id'=>$userId);
-        $result = $this->common_model->getsingle('users',$where);
-        $data['userData'] = $result;
+        $userId             = decoding($this->uri->segment(3));
+        $data['title']      = lang('Change_password');
+        $where              = array('id'=>$userId);
+        $result             = $this->common_model->getsingle('users',$where);
+        $data['userData']   = $result;
         $this->load->admin_render('changePassword', $data, '');
     }   
 }
