@@ -158,9 +158,9 @@ class Api_model extends CI_Model {
         {
             $result = $sql->row();
             $useremail= $result->email;
-            $passToken= $result->passToken;
+            $passToken= $this->generate_token();
+            $this->common_model->updateFields(USERS,array('passToken'=>$passToken),array('email'=>$result->email));
             $data['full_name'] = $result->fullName;
-            
             // Check for social id
           /*  if(!empty($result->socialId)){
                return  array('emailType'=>'SL' ); //SL social login
@@ -171,7 +171,7 @@ class Api_model extends CI_Model {
       
             $message=$this->load->view('emails/forgot_password',$data,TRUE);
 
-            $subject = lang('forgot_password');
+            $subject = lang('forgot_password_title');
 
             $this->load->library('smtp_email');
             $response=$this->smtp_email->send_mail($useremail,$subject,$message); // Send email For Forgot password

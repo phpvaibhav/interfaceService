@@ -28,7 +28,7 @@
                         <td>
 
                             <h3 style="color: #333; font-size: 28px; font-weight: normal; margin: 0; text-transform: capitalize;"><?= lang('forgot_password_title'); ?></h3>
-                            <p style="text-align: left; color: #333; font-size: 16px; line-height: 28px;"><?= lang('Hello'); ?><?= lang('Hello'); ?>, <?php echo $full_name; ?></p>
+                            <p style="text-align: left; color: #333; font-size: 16px; line-height: 28px;"><?= lang('Hello'); ?>, <?php echo $full_name; ?></p>
                             <p style="text-align: left;color: #333; font-size: 16px; line-height: 28px;"><?= lang('forgot_title_msg');?></p>
                             <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
                         <tr>

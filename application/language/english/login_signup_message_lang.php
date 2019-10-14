@@ -52,6 +52,8 @@ $lang['forgot_title_msg'] = "You recently requested to reset your password for y
 $lang['forgot_title_msg_more'] = "If you didn't generate this link, don't worry. You can login with your old password. This link is only for one time use.";
 $lang['Thanks'] = "Thanks";
 $lang['Reset_Password'] = "Reset Password";
+$lang['Your_Password_has_been_Changed_successfully'] = "Your Password has been Changed successfully";
+$lang['This_link_is_expired'] = "This link is expired";
 
 
 

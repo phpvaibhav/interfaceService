@@ -52,6 +52,8 @@ $lang['forgot_title_msg'] = "Du har nylig bedt om å tilbakestille passordet dit
 $lang['forgot_title_msg_more'] = "Hvis du ikke genererte denne koblingen, ikke bekymre deg. Du kan logge inn med det gamle passordet ditt. Denne lenken er kun til engangsbruk.";
 $lang['Thanks'] = "Takk";
 $lang['Reset_Password'] = "Tilbakestille passord";
+$lang['Your_Password_has_been_Changed_successfully'] = "Byttingen av passordet ditt er velykket";
+$lang['This_link_is_expired'] = "Denne lenken er utløpt";
 
 
 
