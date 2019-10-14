@@ -109,21 +109,17 @@ class Service extends Common_Back_Controller {
       $content = '';
       
      
-        $content .= '
-            
-            <table border="0" cellspacing="1" cellpadding="4">
+        $content .= '<table border="0" cellspacing="1" cellpadding="4">
                 <tr style="background-color:#707070;color:#FFFFFF;"  nobr="true">
-                <th>Product Name</th>
-                <th>Manufacture</th>
-                <th>Model Name</th>
-                <th>Series Number</th>
-                <th>Date of Purchase</th>
-                <th>Contact Number</th>
-                <th>Status</th>
-                
-                </tr>';
+                <th>'.lang('Product_Name').'</th>
+                <th>'.lang('Manufacture').'</th>
+                <th>'.lang('Model_name').'</th>
+                <th>'.lang('Series_Number').'</th>
+                <th>'.lang('Date_of_Purchase').'</th>
+                <th>'.lang('Contact_Number').'</th>
+                <th>'.lang('Status').'</th></tr>';
             //$content .= $this->fetch_employeePdf_info();
-          $content .= '</table>';
+       //   $content .= '</table>';
       
           $services =  $this->common_model->getAll('service');
 
@@ -144,17 +140,17 @@ class Service extends Common_Back_Controller {
         
            switch ($service->status) {
                case 0:
-                   $content .='<td>Pending</td>';
+                   $content .='<td>'.lang('Pending').'</td>';
                    break;
                case 1:
-                   $content .='<td>In Progress</td>';
+                   $content .='<td>'.lang('In Progress').'</td>';
                    break;
                case 2:
-                   $content .='<td>Completed</td>';
+                   $content .='<td>'.lang('Complete').'</td>';
                    break;
                
                default:
-                   $content .='<td>Pending</td>';
+                   $content .='<td>'.lang('Pending').'</td>';
                    break;
            }
          
@@ -256,20 +252,16 @@ class Service extends Common_Back_Controller {
       $content = '';
       
      
-        $content .= '
-            
-            <table border="0" cellspacing="1" cellpadding="4">
-                  <tr style="background-color:#707070;color:#FFFFFF;"  nobr="true">
-                <th>Product Name</th>
-                <th>Manufacture</th>
-                <th>Model Name</th>
-                <th>Series Number</th>
-                <th>Date of Purchase</th>
-                <th>Contact Number</th>
-                <th>Status</th>
-                </tr>';
-           
-          $content .= '</table>';
+            $content .= '<table border="0" cellspacing="1" cellpadding="4">
+                <tr style="background-color:#707070;color:#FFFFFF;"  nobr="true">
+                <th>'.lang('Product_Name').'</th>
+                <th>'.lang('Manufacture').'</th>
+                <th>'.lang('Model_name').'</th>
+                <th>'.lang('Series_Number').'</th>
+                <th>'.lang('Date_of_Purchase').'</th>
+                <th>'.lang('Contact_Number').'</th>
+                <th>'.lang('Status').'</th></tr>';
+
       
    
        
@@ -285,18 +277,19 @@ class Service extends Common_Back_Controller {
            $content .='<td>'.$service['contactNumber'].'</td>';
         
            switch ($service['status']) {
+
                case 0:
-                   $content .='<td>Pending</td>';
+                   $content .='<td>'.lang('Pending').'</td>';
                    break;
                case 1:
-                   $content .='<td>In Progress</td>';
+                   $content .='<td>'.lang('In Progress').'</td>';
                    break;
                case 2:
-                   $content .='<td>Completed</td>';
+                   $content .='<td>'.lang('Complete').'</td>';
                    break;
                
                default:
-                   $content .='<td>Pending</td>';
+                   $content .='<td>'.lang('Pending').'</td>';
                    break;
            }
          
@@ -308,10 +301,10 @@ class Service extends Common_Back_Controller {
         $content .='</table>';
         $content .='<br/>
         <dl>
-    <dt><b>Fault Description</b></dt>
+    <dt><b>'.lang('Fault_Description').'</b></dt>
     <dd>'.trim($service['faultDescription']).'</dd>';
     if(!empty($images)):
-         $content .= '</dl><dl><dt><b>Receipt of Purchase</b></dt></dl>
+         $content .= '</dl><dl><dt><b>'.lang('Receipt_of_Purchase').'</b></dt></dl>
 <div><br />';
     endif;
     foreach ($images as $k => $img) {

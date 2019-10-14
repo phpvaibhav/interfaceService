@@ -21,6 +21,7 @@ $lang['No'] 					= "No";
 $lang['Active'] 				= "Active";
 $lang['Inactive'] 				= "Inactive";
 $lang['Update'] 				= "Update";
+
 $lang['error_not_able_to_send_email'] 		= "Error not able to send email";
 $lang['this_email_does_not_exist'] 			= "This Email does not exist";
 $lang['are_you_sure_you_want_to_logout'] 	= "Are you sure you want to logout";
@@ -30,6 +31,7 @@ $lang['Alert'] 								= "Alert!";
 $lang['Profile'] 							= "Profile";
 $lang['Browse'] 							= "Browse";
 $lang['Detail'] 							= "Detail";
+
 $lang['You_want_to_change_status'] 			= "You want to change status!";
 $lang['User_request_is_Active'] 			= "User request is Active";
 $lang['User_request_is_Inactive'] 			= "User request is Inactive";
@@ -38,6 +40,11 @@ $lang['Are_you_sure'] 						= "Are you sure?";
 $lang['Image'] 								= "Image";
 $lang['Status'] 							= "Status";
 $lang['Action'] 							= "Action";
+$lang['Add'] 									= "Add";
+$lang['Password_Change_successfully'] 			= "Password Change successfully";
+$lang['Email_id_does_not_exist'] 			= "Email id does not exist";
+
+
 $lang['Service_Information'] 				= "Service Information";
 $lang['Report_PDF'] 						= "Report PDF";
 
@@ -48,6 +55,7 @@ $lang['Series_Number'] 						= "Series Number";
 $lang['Date_of_Purchase'] 					= "Date of Purchase";
 $lang['Contact_Number'] 					= "Contact Number";
 $lang['Fault_Description'] 					= "Fault Description";
+$lang['Service_Request'] 					= "Service Request";
 $lang['Pending'] 							= "Pending";
 $lang['In Progress'] 						= "In Progress";
 $lang['Complete'] 							= "Complete";
@@ -69,7 +77,7 @@ $lang['Internal_Comment'] 						= "Internal Comment";
 $lang['Comment'] 								= "Comment";
 $lang['What_are_you_thinking'] 					= "What are you thinking?";
 $lang['No_comment_found'] 						= "No comment found";
-$lang['Add'] 									= "Add";
+
 $lang['You_can_select_only_4_receipt'] 			= "You can select only 4 receipt";
 
 $lang['Please_enter_your_product_name'] 		= "Please enter your product name";
@@ -79,6 +87,9 @@ $lang['Please_enter_your_product_series_number'] 		= "Please enter your product 
 $lang['Please_select_your_product_date_of_purchase'] 	= "Please select your product date of purchase";
 $lang['Please_enter_your_contact_number'] 				= "Please enter your contact number";
 $lang['Please_enter_your_fault_description'] 			= "Please enter your fault description";
+$lang['comment_added_successfully'] 			= "comment added successfully";
+$lang['Internal_comment_added_successfully'] 			= "Internal comment added successfully";
+
 
 
 ?>

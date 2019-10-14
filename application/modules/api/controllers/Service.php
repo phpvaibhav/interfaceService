@@ -80,10 +80,11 @@ class Service extends Common_Service_Controller{
                     endif;
                endif;//images
                 //email send
+
                                         //send mail
                         $maildata['title']    = $this->authData->fullName." has been  created ".SITE_NAME;
-                        $maildata['message']  = "<table><tr><td>Product</td><td>".$data_val['productName']."</td></tr><tr><td>Manufacture</td><td>".$data_val['vendor']."</td></tr><tr><td>Serial number</td><td>".$data_val['serialNumber']."</td></tr><tr><td>Date of Purchase</td><td>".$purchaseDate."</td></tr><tr><td>Contact number</td><td>".$data_val['contactNumber']."</td></tr><tr><td>Fault Description</td><td>".$data_val['faultDescription']."</td></tr></table>";
-                        $subject = "Service Request";
+                        $maildata['message']  = "<table><tr><td>".lang('Product_Name')."</td><td>".$data_val['productName']."</td></tr><tr><td>".lang('Manufacture')."</td><td>".$data_val['vendor']."</td></tr><tr><td>".lang('Series_Number')."</td><td>".$data_val['serialNumber']."</td></tr><tr><td>".lang('Date_of_Purchase')."</td><td>".$purchaseDate."</td></tr><tr><td>".lang('Contact_Number')."</td><td>".$data_val['contactNumber']."</td></tr><tr><td>".lang('Fault_Description')."</td><td>".$data_val['faultDescription']."</td></tr></table>";
+                        $subject = lang('Service_Request');
                         $message=$this->load->view('emails/email',$maildata,TRUE);
                         $emails = $this->common_model->adminEmails();
                         if(!empty($emails)){
@@ -191,7 +192,7 @@ class Service extends Common_Service_Controller{
              $update=$this->common_model->updateFields('service',array('status'=>$status),$where);
                     //send mail
                      $maildata['title']    = "Service Status";
-                    $maildata['message']  = "Your service request is ".($status==2)? " Completed" : "in progress";
+                    $maildata['message']  = "Your service request is ".($status==2)? lang('Complete') : lang('In Progress');
                   
                     $subject = "Service Process";
                     $message=$this->load->view('emails/email',$maildata,TRUE);
@@ -201,7 +202,7 @@ class Service extends Common_Service_Controller{
                     $this->smtp_email->send_mail($email,$subject,$message);
                     
                     //send mail
-                      $showmsg  = "Service request is ".($status==2)? " Completed" : "in progress";
+                      $showmsg  = "Service request is ".($status==2)? lang('Complete') : lang('In Progress');
                 $response = array('status'=>SUCCESS,'message'=>$showmsg);
         }else{
            $response = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118));  
@@ -222,7 +223,7 @@ class Service extends Common_Service_Controller{
             $data_val['userId']     = $userId ;
             $result = $this->common_model->insertData('comments',$data_val);
             if($result){
-                 $response = array('status'=>SUCCESS,'message'=>"comment added successfully.");
+                 $response = array('status'=>SUCCESS,'message'=>lang('comment_added_successfully'));
             }else{
                 $response = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118)); 
             }
@@ -233,7 +234,7 @@ class Service extends Common_Service_Controller{
         $authCheck  = $this->check_service_auth();
         $authToken  = $this->authData->authToken;
         $userId     = $this->authData->id;
-        $this->form_validation->set_rules('notes', 'internal comment', 'trim|required');
+        $this->form_validation->set_rules('notes', lang('Internal_Comment'), 'trim|required');
           if($this->form_validation->run() == FALSE){
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
            
@@ -243,7 +244,7 @@ class Service extends Common_Service_Controller{
             
             $result = $this->common_model->updateFields('service',$data_val,array('serviceId'=>$serviceId));
             if($result){
-                 $response = array('status'=>SUCCESS,'message'=>"Internal comment added successfully.");
+                 $response = array('status'=>SUCCESS,'message'=>lang('Internal_comment_added_successfully'));
             }else{
                 $response = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118)); 
             }

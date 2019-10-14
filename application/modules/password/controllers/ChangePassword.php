@@ -56,9 +56,9 @@ class ChangePassword extends Common_Back_Controller {
             if($response){
               $rurl=base_url().'password/ChangePassword/success';  // For Redirect after change password
               $this->common_model->updateFields($table, $update_data, $where_email);  //update Password
-              $response = array('status' =>SUCCESS, 'message' =>'Password Change successfully.', 'url'=>$rurl); //success msg
+              $response = array('status' =>SUCCESS, 'message' =>lang('Password_Change_successfully'), 'url'=>$rurl); //success msg
             }else{
-              $response = array('status' =>FAIL, 'message' => 'Email id does not exist.');  
+              $response = array('status' =>FAIL, 'message' =>lang('Email_id_does_not_exist'));  
             }
             //print_r($response); die();
         }
