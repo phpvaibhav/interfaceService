@@ -34,7 +34,7 @@
 
                   <section>
                     <label class="checkbox">
-                      <input type="checkbox" id="remember_me" name="remember" checked="">
+                      <input type="checkbox" id="remember_me" value="1" name="remember" checked="">
                       <i></i><?php echo lang('remember_me'); ?></label>
                   </section>
                 </fieldset>
