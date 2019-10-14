@@ -16,12 +16,12 @@ class Admin extends Common_Back_Controller {
 
     public function index() { 
       
-        $data['title'] = "Login";
+        $data['title'] = lang('Login');
         $this->load->login_render('login', $data);
     }
     public function signup() { 
 
-    $data['title'] = "Sign up";
+    $data['title'] = lang('Sign_up');
     $this->load->login_render('signup', $data);
     }
     public function forgot() { 
