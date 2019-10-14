@@ -1,6 +1,4 @@
-<?php
-
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ChangePassword extends Common_Back_Controller {
 
@@ -15,7 +13,7 @@ class ChangePassword extends Common_Back_Controller {
     }
     
     // Change Password  From email Template url
-  
+
     public function change_password(){
        
          $data['email']=decoding($this->uri->segment(4));
@@ -62,16 +60,11 @@ class ChangePassword extends Common_Back_Controller {
             }
             //print_r($response); die();
         }
-
-         echo json_encode($response);
+        echo json_encode($response);
     }
-
-
     // Change Password Success Template url
     public function change_password_suucess(){
        $this->load->login_render('success');      
     } 
-
-
 
 } //End class
