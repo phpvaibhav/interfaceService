@@ -30,7 +30,7 @@
 
 								</fieldset>
 								<footer>
-									<button type="submit" class="btn btn-warning fontClass">
+									<button type="submit" id="submit" class="btn btn-warning fontClass">
 										<i class="fa fa-refresh"></i> <?php echo lang('forgot_password_btn'); ?>
 									</button>
 								</footer>
