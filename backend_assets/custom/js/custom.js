@@ -47,6 +47,7 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
     $('#remember_me').attr('checked', 'checked');
     $('#username').val(localStorage.usrname);
     $('#password').val(localStorage.pass);
+    
   } else {
     $('#remember_me').removeAttr('checked');
     $('#username').val('');

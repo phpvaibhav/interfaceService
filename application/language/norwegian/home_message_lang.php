@@ -43,7 +43,7 @@ $lang['Action'] 							= "Handling";
 $lang['Add'] 								= "Legg til";
 $lang['Password_Change_successfully'] 			= "Endre passord";
 $lang['Email_id_does_not_exist'] 			= "E-post-id eksisterer ikke";
-/*
+
 
 $lang['Product_Name'] 						= "Produkt navn";
 $lang['Manufacture'] 						= "Produksjon";
@@ -87,9 +87,9 @@ $lang['Please_enter_your_fault_description'] 			= "Angi feilbeskrivelsen";
 $lang['comment_added_successfully'] 			= "kommentaren ble lagt til";
 $lang['Internal_comment_added_successfully'] 			= "Intern kommentar ble lagt til.";
 
-*/
-							
 
+							
+/*
 
 $lang['Service_Information'] 				= "Service Information";
 $lang['Report_PDF'] 						= "Report PDF";
@@ -134,6 +134,6 @@ $lang['Please_select_your_product_date_of_purchase'] 	= "Please select your prod
 $lang['Please_enter_your_contact_number'] 				= "Please enter your contact number";
 $lang['Please_enter_your_fault_description'] 			= "Please enter your fault description";
 $lang['comment_added_successfully'] 			= "comment added successfully";
-$lang['Internal_comment_added_successfully'] 			= "Internal comment added successfully";
+$lang['Internal_comment_added_successfully'] 			= "Internal comment added successfully";*/
 
 ?>
