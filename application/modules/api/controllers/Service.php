@@ -44,20 +44,8 @@ class Service extends Common_Service_Controller{
             if (!empty($_FILES['serviceImage']['name'])) {
                 $folder         = 'service';
                 $images         = $this->image_model->updateGallery('serviceImage',$folder); //upload media of Seller
-             
-                //check for error
-            /*    if(array_key_exists("error",$image) && !empty($image['error'])){
-                    $response = array('status' => FAIL, 'message' => strip_tags($image['error'].'(In service Image)'));
-                   $this->response($response);
-                }*/
-                
-                //check for image name if present
-               /* if(array_key_exists("image_name",$image)):
-                    $serviceImage = $image['image_name'];
-                endif;*/
-            
+
             }
-           // $image_data['profileImage']           =   $serviceImage;
 
             $result = $this->common_model->insertData('service',$data_val);
             if($result){
@@ -164,9 +152,6 @@ class Service extends Common_Service_Controller{
             endif;
             endif;
             $action .= '&nbsp;&nbsp;<a href="'.$linkDtail.'" class="on-default edit-row table_action" title="'.lang('Detail').'"><i class="fa fa-eye"></i></a>';
-               
-            // $clk_edit =  "editFn('admin/categoryCtrl','editGenres','$usersData->id');" ;
-            // $action .= '<a href="javascript:void(0)" onclick="'.$clk_edit.'" class="on-default edit-row table_action" title="Edit Event"><i class="fa fa-pencil-square-o"></i></a>';          
 
         $row[] = $action;
         $data[] = $row;

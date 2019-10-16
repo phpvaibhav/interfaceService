@@ -171,8 +171,7 @@ class Service extends Common_Back_Controller {
    // End job PFD     
    public function serviceDetailPdf()
    {
-    $serviceId  = decoding($this->uri->segment(3));
-
+        $serviceId  = decoding($this->uri->segment(3));
         $service = $this->common_model->getsingle('service',array('serviceId'=>$serviceId));
        
         if(empty($service)){

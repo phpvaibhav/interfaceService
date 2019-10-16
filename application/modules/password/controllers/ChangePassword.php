@@ -7,9 +7,8 @@ class ChangePassword extends Common_Back_Controller {
 
     public function __construct() {
         parent::__construct();
-        //$this->form_validation->CI =& $this;  //required for form validation callbacks in HMVC
         $this->validation_rules = array();
-        //$this->load->model('common_model');
+       
     }
     
     // Change Password  From email Template url

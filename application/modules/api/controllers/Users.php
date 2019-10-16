@@ -36,20 +36,16 @@ class Users extends Common_Service_Controller{
            
             $action .= "";
         if($serData->status){
-
             $action .= '<a href="'.$link.'" onclick="statusChangeuser(this);" data-message="'.lang('You_want_to_change_status').'" data-useid="'.encoding($serData->id).'"  class="on-default edit-row table_action" title="status" data-title="'.lang('Are_you_sure').'" data-yes="'.lang('Yes').'" data-no="'.lang('No').'" ><i class="fa fa-check" aria-hidden="true"></i></a>';
         }else{
              $action .= '<a href="'.$link.'" onclick="statusChangeuser(this);" data-message="'.lang('You_want_to_change_status').'" data-useid="'.encoding($serData->id).'"  class="on-default edit-row table_action" title="status" data-title="'.lang('Are_you_sure').'" data-yes="'.lang('Yes').'" data-no="'.lang('No').'" ><i class="fa fa-times" aria-hidden="true"></i></a>';
         }
         $userLink = base_url().'users/userDetail/'.encoding($serData->id);
         $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$userLink.'"  class="on-default edit-row table_action" title="'.lang('Detail').'"><i class="fa fa-eye" aria-hidden="true"></i></a>';
-             
 
         $row[] = $action;
         $data[] = $row;
-
         }
-
         $output = array(
             "draw" => $_POST['draw'],
             "recordsTotal" => $this->user_model->count_all(),
@@ -57,17 +53,14 @@ class Users extends Common_Service_Controller{
             "data" => $data,
         );
         //output to json format
-       
         $this->response($output);
     } //End Function
     function changeStatus_post(){
         $userId     = decoding($this->post('use'));
-    
         $where      = array('id'=>$userId);
          $dataExist=$this->common_model->is_data_exists('users',$where);
         if($dataExist){
             $status = $dataExist->status ?0:1;
-
              $dataExist=$this->common_model->updateFields('users',array('status'=>$status),$where);
               $showmsg  =($status==1)? lang('User_request_is_Active') : lang('User_request_is_Inactive');
                 $response = array('status'=>SUCCESS,'message'=>$showmsg);
@@ -86,8 +79,6 @@ class Users extends Common_Service_Controller{
         $this->form_validation->set_rules('password', 'password', 'trim|required|min_length[6]');
         $this->form_validation->set_rules('npassword', 'new password', 'trim|required|matches[rnpassword]|min_length[6]');
         $this->form_validation->set_rules('rnpassword', 'retype new password ','trim|required|min_length[6]');
-
-        
        if($this->form_validation->run($this) == FALSE){
            $messages = (validation_errors()) ? validation_errors() : '';
            $response = array('status' => 0, 'message' => $messages);
@@ -110,8 +101,7 @@ class Users extends Common_Service_Controller{
                     else{
                          $response = array('status' => FAIL, 'message' => ResponseMessages::getStatusCodeMessage(118), 'url' => base_url('users/userDetail'));
                         
-                    }
-                    
+                    }   
                 } 
             }else{
                  $response = array('status' =>FAIL, 'message' => lang('Your_Current_Password_is_Wrong'), 'url' => base_url('users/userDetail'));                 
@@ -123,10 +113,6 @@ class Users extends Common_Service_Controller{
          $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('contact', 'Contact Number', 'trim|required|min_length[10]|max_length[20]');
         $this->form_validation->set_rules('fullName', 'full Name', 'trim|required|min_length[2]');
-        
-     /*   if (empty($_FILES['profileImage']['name'])) {
-            $this->form_validation->set_rules('profileImage', 'profile image', 'trim|required');
-        }*/
         if($this->form_validation->run() == FALSE){
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
            
@@ -164,7 +150,6 @@ class Users extends Common_Service_Controller{
                             $response = array('status' => FAIL, 'message' => strip_tags($image['error']));
                            $this->response($response);die;
                         }
-
                         //check for image name if present
                         if(array_key_exists("image_name",$image)):
                             $profileImage = $image['image_name'];
@@ -173,14 +158,12 @@ class Users extends Common_Service_Controller{
                         }
                         if(!empty($profileImage)){
                             $userData['profileImage']           =   $profileImage;
-                        }
-                        
+                        }    
                     //update
                     $result = $this->common_model->updateFields('users',$userData,array('id'=>$userauth));
                    
                     if($result){
                         $response = array('status'=>SUCCESS,'message'=>ResponseMessages::getStatusCodeMessage(123),'url'=>$userid);
-
 
                     }else{
                     $response = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(118),'userDetail'=>array());
@@ -189,15 +172,12 @@ class Users extends Common_Service_Controller{
                 }else{
                     $response = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(117),'userDetail'=>array());
                 }
-              
 
             }else{
                 $response = array('status'=>FAIL,'message'=>ResponseMessages::getStatusCodeMessage(126),'userDetail'=>array()); 
             }
-           
-        
         }
-         $this->response($response);
+        $this->response($response);
     }//end function
    
 

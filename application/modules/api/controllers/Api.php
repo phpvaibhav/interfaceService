@@ -7,7 +7,6 @@ class Api extends Common_Service_Controller{
   
         $this->load->model('api_model'); //load image model
     }
-
     // For Registration 
     function registration_post(){
         
@@ -18,10 +17,7 @@ class Api extends Common_Service_Controller{
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]|max_length[20]');
         $this->form_validation->set_rules('contact', 'Contact Number', 'trim|required|min_length[10]|max_length[20]');
         $this->form_validation->set_rules('fullName', 'full Name', 'trim|required|min_length[2]');
-        
-     /*   if (empty($_FILES['profileImage']['name'])) {
-            $this->form_validation->set_rules('profileImage', 'profile image', 'trim|required');
-        }*/
+
         if($this->form_validation->run() == FALSE){
             $response = array('status' => FAIL, 'message' => strip_tags(validation_errors()));
             $this->response($response);
@@ -30,7 +26,6 @@ class Api extends Common_Service_Controller{
         
             $email          =  $this->post('email');
             $fullName       =  $this->post('fullName');
-          
             $authtoken      = $this->api_model->generate_token();
             $passToken      = $this->api_model->generate_token();
 
@@ -46,7 +41,6 @@ class Api extends Common_Service_Controller{
                 $userData['password']           =   password_hash($this->post('password'), PASSWORD_DEFAULT);
                 $userData['authToken']          =   $authtoken;
                 $userData['passToken']     =   $passToken;
-
             //user info
             // profile pic upload
             $this->load->model('Image_model');
@@ -54,14 +48,12 @@ class Api extends Common_Service_Controller{
             $image = array(); $profileImage = '';
             if (!empty($_FILES['profileImage']['name'])) {
                 $folder     = 'users';
-                $image      = $this->Image_model->upload_image('profileImage',$folder); //upload media of Seller
-                
+                $image      = $this->Image_model->upload_image('profileImage',$folder); //upload media of Seller 
                 //check for error
                 if(array_key_exists("error",$image) && !empty($image['error'])){
                     $response = array('status' => FAIL, 'message' => strip_tags($image['error'].'('.lang('In_user_Image').')'));
                    $this->response($response);
                 }
-                
                 //check for image name if present
                 if(array_key_exists("image_name",$image)):
                     $profileImage = $image['image_name'];
@@ -114,12 +106,10 @@ class Api extends Common_Service_Controller{
         else
         {
             $authtoken = $this->api_model->generate_token();
-           
             $data = array();
             $data['email']          = $this->post('email');
             $data['password']       = $this->post('password');
             $data['authToken']      = $authtoken;
-
             $result = $this->api_model->login($data,$authtoken);
 
 
