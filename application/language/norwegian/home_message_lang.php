@@ -25,7 +25,7 @@ $lang['Inactive'] 					= "Uvirksom";
 $lang['Update'] 					= "Oppdater";
 $lang['error_not_able_to_send_email'] 		= "Feil ved ikke å kunne sende e-post";
 $lang['this_email_does_not_exist'] 			= "Denne e-postadressen eksisterer ikke";
-$lang['are_you_sure_you_want_to_logout'] 	= "Er du sikker på at du vil logge av";
+$lang['are_you_sure_you_want_to_logout'] 	= "Er du sikker på at du vil logge ut?";
 $lang['Logout'] 							= "Logg ut";
 $lang['Success'] 							= "Suksess";
 $lang['Alert'] 								= "Obs!";
@@ -42,7 +42,7 @@ $lang['Status'] 							= "Status";
 $lang['Action'] 							= "Handling";
 
 $lang['Add'] 								= "Legg til";
-$lang['Password_Change_successfully'] 			= "Endre passord";
+$lang['Password_Change_successfully'] 		= "Endre passord";
 $lang['Email_id_does_not_exist'] 			= "E-post-id eksisterer ikke";
 $lang['Service_Information'] 				= "Service Informasjon";
 $lang['Report_PDF'] 						= "Rapportere PDF";
