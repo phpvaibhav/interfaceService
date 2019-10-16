@@ -37,16 +37,13 @@ class Users extends Common_Service_Controller{
             $action .= "";
         if($serData->status){
 
-            $action .= '<a href="'.$link.'" onclick="statusChangeuser(this);" data-message="'.lang('You_want_to_change_status').'" data-useid="'.encoding($serData->id).'"  class="on-default edit-row table_action" title="status" data-title="'.lang('Are_you_sure').'" data-yes="'.lang('Yes').'" data-no="'.lang('No').'" ><i class="fa fa-check" aria-hidden="true"></i></a>&nbsp;&nbsp;|';
+            $action .= '<a href="'.$link.'" onclick="statusChangeuser(this);" data-message="'.lang('You_want_to_change_status').'" data-useid="'.encoding($serData->id).'"  class="on-default edit-row table_action" title="status" data-title="'.lang('Are_you_sure').'" data-yes="'.lang('Yes').'" data-no="'.lang('No').'" ><i class="fa fa-check" aria-hidden="true"></i></a>';
         }else{
-             $action .= '&nbsp;&nbsp;<a href="'.$link.'" onclick="statusChangeuser(this);" data-message="'.lang('You_want_to_change_status').'" data-useid="'.encoding($serData->id).'"  class="on-default edit-row table_action" title="status" data-title="'.lang('Are_you_sure').'" data-yes="'.lang('Yes').'" data-no="'.lang('No').'" ><i class="fa fa-times" aria-hidden="true"></i></a>&nbsp;&nbsp;|';
+             $action .= '<a href="'.$link.'" onclick="statusChangeuser(this);" data-message="'.lang('You_want_to_change_status').'" data-useid="'.encoding($serData->id).'"  class="on-default edit-row table_action" title="status" data-title="'.lang('Are_you_sure').'" data-yes="'.lang('Yes').'" data-no="'.lang('No').'" ><i class="fa fa-times" aria-hidden="true"></i></a>';
         }
         $userLink = base_url().'users/userDetail/'.encoding($serData->id);
-        $action .= '&nbsp;&nbsp;<a href="'.$userLink.'"  class="on-default edit-row table_action" title="'.lang('Detail').'"><i class="fa fa-eye" aria-hidden="true"></i></a>';
-          /*  $action .= '<a href="'.$link.'" onclick="statusChange(this);" data-message="You want to change status!" data-serid="'.encoding($serData->serviceId).'" data-sid="'.encoding($applyStatus).'"  class="on-default edit-row table_action" title="View user">'.$applyMsg.'</a>';*/
+        $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$userLink.'"  class="on-default edit-row table_action" title="'.lang('Detail').'"><i class="fa fa-eye" aria-hidden="true"></i></a>';
              
-            // $clk_edit =  "editFn('admin/categoryCtrl','editGenres','$usersData->id');" ;
-            // $action .= '<a href="javascript:void(0)" onclick="'.$clk_edit.'" class="on-default edit-row table_action" title="Edit Event"><i class="fa fa-pencil-square-o"></i></a>';          
 
         $row[] = $action;
         $data[] = $row;
