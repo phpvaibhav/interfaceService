@@ -80,12 +80,12 @@ $lang['No_comment_found'] 					= "Ingen kommentar funnet";
 
 $lang['You_can_select_only_4_receipt'] 		= "Du kan bare velge 4 kvitteringer";
 
-$lang['Please_enter_your_product_name'] 	= "Vennligst skriv inn produktnavnet ditt";
-$lang['Please_enter_your_manufacture'] 		= "Vennligst skriv inn produksjonen din";
-$lang['Please_enter_your_model_name'] 		= "Skriv inn modellnavnet ditt";
+$lang['Please_enter_your_product_name'] 	= "Vennligst registrer ditt produkt navn";
+$lang['Please_enter_your_manufacture'] 		= "Vennligst registrer fabrikanten";
+$lang['Please_enter_your_model_name'] 		= "Vennligst skriv inn modell navnet";
 $lang['Please_enter_your_product_series_number'] 		= "Vennligst skriv inn produktserienummeret ditt";
-$lang['Please_select_your_product_date_of_purchase'] 	= "Velg produktdato for kjøp";
-$lang['Please_enter_your_contact_number'] 				= "Vennligst skriv inn kontaktnummeret ditt";
+$lang['Please_select_your_product_date_of_purchase'] 	= "Vennligst registrer kjøpsdato";
+$lang['Please_enter_your_contact_number'] 				= "Vennligst skriv inn ditt telefonnummer";
 $lang['Please_enter_your_fault_description'] 			= "Vennligst beskriv oppdraget";
 $lang['comment_added_successfully'] 			= "Kommentar lagret";
 $lang['Internal_comment_added_successfully'] 			= "Intern kommentar ble lagt til.";
