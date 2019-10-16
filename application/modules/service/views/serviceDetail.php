@@ -61,7 +61,7 @@
 							<li class="list-group-item">
 								<div class="badge bg-color-<?php echo $label; ?> txt-color-white pull-right">
 								<strong><?php echo $status; ?></strong>
-								</div><b>Service Status</b>
+								</div><b><?= lang('Service_Status');?></b>
 							</li>	
 							<li class="list-group-item text-center">
 									<?php

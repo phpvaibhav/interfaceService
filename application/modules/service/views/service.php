@@ -53,7 +53,7 @@
 										<th data-hide="phone,tablet"><?= lang('Date_of_Purchase');?></th>
 										<th data-hide="phone,tablet"><?= lang('Contact_Number'); ?></th>
 										<th><?= lang('Fault_Description'); ?></th>
-										<th data-hide="phone,tablet"><?= lang('Status'); ?></th>
+										<th data-hide="phone,tablet"><?= lang('Service_Status'); ?></th>
 										<th data-hide="phone,tablet"><?= lang('Action'); ?></th>
 										
 									</tr>

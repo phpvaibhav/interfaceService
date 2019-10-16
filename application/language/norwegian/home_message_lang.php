@@ -91,6 +91,7 @@ $lang['comment_added_successfully'] 			= "Kommentar lagret";
 $lang['Internal_comment_added_successfully'] 			= "Intern kommentar ble lagt til.";
 $lang['Date'] 			= "Dato";
 $lang['By'] 			= "Av";
+$lang['Service_Status'] 			= "Status på service";
 
 
 							

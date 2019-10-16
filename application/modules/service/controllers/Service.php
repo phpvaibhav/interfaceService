@@ -117,7 +117,7 @@ class Service extends Common_Back_Controller {
                 <th>'.lang('Series_Number').'</th>
                 <th>'.lang('Date_of_Purchase').'</th>
                 <th>'.lang('Contact_Number').'</th>
-                <th>'.lang('Status').'</th></tr>';
+                <th>'.lang('Service_Status').'</th></tr>';
             //$content .= $this->fetch_employeePdf_info();
        //   $content .= '</table>';
       
@@ -255,7 +255,7 @@ class Service extends Common_Back_Controller {
                 <th>'.lang('Series_Number').'</th>
                 <th>'.lang('Date_of_Purchase').'</th>
                 <th>'.lang('Contact_Number').'</th>
-                <th>'.lang('Status').'</th></tr>';
+                <th>'.lang('Service_Status').'</th></tr>';
 
       
    

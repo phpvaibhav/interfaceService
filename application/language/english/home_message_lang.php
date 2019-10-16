@@ -93,6 +93,7 @@ $lang['comment_added_successfully'] 			= "comment added successfully";
 $lang['Internal_comment_added_successfully'] 			= "Internal comment added successfully";
 $lang['Date'] 			= "Date";
 $lang['By'] 			= "By";
+$lang['Service_Status'] 			= "Service Status";
 
 
 
