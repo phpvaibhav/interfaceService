@@ -91,7 +91,7 @@ class Service extends Common_Back_Controller {
       // add a page
       $pdf->AddPage();
         // print a line
-        $pdf->Cell(0, 12, 'Services',0, 0, 'C');
+        $pdf->Cell(0, 12,lang('Services'),0, 0, 'C');
 
         $pdf->Ln(5);
          $pdf->Ln(5);
@@ -110,7 +110,7 @@ class Service extends Common_Back_Controller {
       
      
         $content .= '<table border="0" cellspacing="1" cellpadding="4">
-                <tr style="background-color:#707070;color:#FFFFFF;"  nobr="true">
+                <tr bgcolor="#cccccc"  nobr="true">
                 <th>'.lang('Product_Name').'</th>
                 <th>'.lang('Manufacture').'</th>
                 <th>'.lang('Model_name').'</th>
@@ -124,13 +124,8 @@ class Service extends Common_Back_Controller {
           $services =  $this->common_model->getAll('service');
 
        foreach ($services as $k => $service) {
-        if($k++%2 == 1){
-             $colr = "background-color:#f1f1f1!important;";
-         }else{
-            $colr = "background-color:#fff!important;;";
-         }
-                    
-           $content .='<tr nobr="true" style="color:#000; '.$colr.'">';
+           
+           $content .='<tr nobr="true" bgcolor="#EAECF0">';
            $content .='<td>'.$service->productName.'</td>';
            $content .='<td>'.$service->vendor.'</td>';
            $content .='<td>'.$service->modelName.'</td>';
