@@ -49,7 +49,7 @@ $lang['Report_PDF'] 						= "Rapportere PDF";
 $lang['Service_PDF'] 						= "Service PDF";
 
 $lang['Product_Name'] 						= "Produkt navn";
-$lang['Manufacture'] 						= "Produksjon";
+$lang['Manufacture'] 						= "Fabrikant";
 $lang['Model_name'] 						= "Modell";
 $lang['Series_Number'] 						= "Serienummer";
 $lang['Date_of_Purchase'] 					= "Kjøpsdato";
@@ -89,6 +89,8 @@ $lang['Please_enter_your_contact_number'] 				= "Vennligst skriv inn kontaktnumm
 $lang['Please_enter_your_fault_description'] 			= "Angi feilbeskrivelsen";
 $lang['comment_added_successfully'] 			= "Kommentar lagret";
 $lang['Internal_comment_added_successfully'] 			= "Intern kommentar ble lagt til.";
+$lang['Date'] 			= "Dato";
+$lang['By'] 			= "Av";
 
 
 							

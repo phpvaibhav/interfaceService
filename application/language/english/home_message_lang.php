@@ -91,6 +91,8 @@ $lang['Please_enter_your_contact_number'] 				= "Please enter your contact numbe
 $lang['Please_enter_your_fault_description'] 			= "Please enter your fault description";
 $lang['comment_added_successfully'] 			= "comment added successfully";
 $lang['Internal_comment_added_successfully'] 			= "Internal comment added successfully";
+$lang['Date'] 			= "Date";
+$lang['By'] 			= "By";
 
 
 

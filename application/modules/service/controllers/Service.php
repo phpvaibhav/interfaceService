@@ -95,13 +95,13 @@ class Service extends Common_Back_Controller {
 
         $pdf->Ln(5);
          $pdf->Ln(5);
-      $pdf->Write(0, 'Date: '. date('m/d/Y') , '', 0, 'L', false, 0, true, false, 0);
+      $pdf->Write(0, lang('Date').': '. date('m/d/Y') , '', 0, 'L', false, 0, true, false, 0);
      
 
       // Logged in username
       $userName = $_SESSION[ADMIN_USER_SESS_KEY]['fullName'];
 
-      $pdf->Write(0, 'By: '.$userName, '', 0, 'R', true, 0, false, false, 0);
+      $pdf->Write(0, lang('By').': '.$userName, '', 0, 'R', true, 0, false, false, 0);
         $pdf->Ln(5);
        
       $pdf->SetFont('helvetica', '', 9);
@@ -190,9 +190,9 @@ class Service extends Common_Back_Controller {
       // set document information
       $pdf->SetCreator(PDF_CREATOR);
       $pdf->SetAuthor(SITE_NAME);
-      $pdf->SetTitle('Service Information');
+      $pdf->SetTitle(lang('Service_Information'));
       $pdf->SetSubject(SITE_NAME);
-      $pdf->SetKeywords(SITE_NAME.',service');
+      $pdf->SetKeywords(SITE_NAME.','.lang('Services'));
 
       // set default header data
       //$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.'', PDF_HEADER_STRING);
@@ -229,17 +229,17 @@ class Service extends Common_Back_Controller {
       // add a page
       $pdf->AddPage();
         // print a line
-        $pdf->Cell(0, 12, 'Service',0, 0, 'C');
+        $pdf->Cell(0, 12, lang('Services'),0, 0, 'C');
 
         $pdf->Ln(5);
          $pdf->Ln(5);
-      $pdf->Write(0, 'Date: '. date('m/d/Y') , '', 0, 'L', false, 0, true, false, 0);
+      $pdf->Write(0, lang('Date').': '. date('m/d/Y') , '', 0, 'L', false, 0, true, false, 0);
      
 
       // Logged in username
       $userName = $_SESSION[ADMIN_USER_SESS_KEY]['fullName'];
 
-      $pdf->Write(0, 'By: '.$userName, '', 0, 'R', true, 0, false, false, 0);
+      $pdf->Write(0, lang('By').': '.$userName, '', 0, 'R', true, 0, false, false, 0);
         $pdf->Ln(5);
        
       $pdf->SetFont('helvetica', '', 9);
@@ -248,7 +248,7 @@ class Service extends Common_Back_Controller {
       
      
             $content .= '<table border="0" cellspacing="1" cellpadding="4">
-                <tr style="background-color:#707070;color:#FFFFFF;"  nobr="true">
+                <tr bgcolor="#cccccc"  nobr="true">
                 <th>'.lang('Product_Name').'</th>
                 <th>'.lang('Manufacture').'</th>
                 <th>'.lang('Model_name').'</th>
@@ -260,10 +260,9 @@ class Service extends Common_Back_Controller {
       
    
        
-            $colr = "background-color:#fff!important;;";
-         
+           
                     
-           $content .='<tr nobr="true" style="color:#000; '.$colr.'">';
+           $content .='<tr nobr="true" bgcolor="#EAECF0">';
            $content .='<td>'.$service['productName'].'</td>';
            $content .='<td>'.$service['vendor'].'</td>';
            $content .='<td>'.$service['modelName'].'</td>';
