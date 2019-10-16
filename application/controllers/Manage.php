@@ -13,7 +13,7 @@ class Manage extends Common_Front_Controller {
      }
 	
 	function mailSent(){
-		//die("hii");
+		
 		$email 		= trim($this->input->post('email'));
 		$subject 	= trim($this->input->post('subject'));
 		$path 		= trim($this->input->post('path'));
