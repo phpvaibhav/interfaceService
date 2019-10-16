@@ -5,8 +5,8 @@
  */
 $lang['invalid_api_key'] 						= "Ugyldig API-nøkkel";
 $lang['invalid_token'] 	 						= "Ugyldig token";
-$lang['invalid_email_or_password'] 	 			= "Ugyldig epost eller passord";
-$lang['user_authentication_successfully_done'] 	= "Brukergodkjenning er fullført";
+$lang['invalid_email_or_password'] 	 			= "Ugyldig epost adresse eller passord";
+$lang['user_authentication_successfully_done'] 	= "Verifisert";
 $lang['user_not_found'] 	 = "User not found";
 $lang['user_registration_successfully_done'] 	= "Brukerregistrering er fullført";
 $lang['user_authentication_successfully_done'] 	= "

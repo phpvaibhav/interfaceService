@@ -81,7 +81,7 @@
 												echo 'Super Admin';
 												break;
 											case 2:
-												echo 'Customer';
+												echo lang('Customer');
 												break;
 											case 3:
 												echo 'Employee';

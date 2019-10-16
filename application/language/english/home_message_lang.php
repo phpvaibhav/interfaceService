@@ -6,6 +6,7 @@
 
 $lang['My_Profile'] 			= "My Profile";
 $lang['Change_password'] 		= "Change password";
+$lang['Current_Password'] 		= "Current Password";
 $lang['Collapse_Menu'] 			= "Collapse Menu";
 $lang['Full_Screen'] 			= "Full Screen";
 $lang['Services'] 				= "Services";

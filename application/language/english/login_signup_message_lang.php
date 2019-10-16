@@ -57,6 +57,7 @@ $lang['This_link_is_expired'] = "This link is expired";
 $lang['Login'] 		= "Login";
 $lang['Sign_up'] 	= "Sign up";
 $lang['Forgot'] 	= "Forgot";
+$lang['Customer'] 	= "Customer";
 
 
 

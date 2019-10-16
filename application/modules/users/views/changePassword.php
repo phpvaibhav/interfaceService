@@ -14,7 +14,7 @@
 			<fieldset>
 				<section>
 					<label class="input"> <i class="icon-append fa fa-lock"></i>
-						<input type="password" name="password" placeholder="<?= lang('Change_password');?>" id="password" autocomplete="new-password">
+						<input type="password" name="password" placeholder="<?= lang('Current_Password');?>" id="password" autocomplete="new-password">
 						<b class="tooltip tooltip-bottom-right"><?= lang('please_enter_your_current_password');?></b> </label>
 				</section>
 				<section>
