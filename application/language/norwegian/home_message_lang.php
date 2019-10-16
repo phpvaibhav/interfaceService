@@ -6,7 +6,7 @@
 
 $lang['My_Profile'] 				= "Min profil";
 $lang['Change_password'] 			= "Bytt passord";
-$lang['Current_Password'] 		= "Nåværende passord";
+$lang['Current_Password'] 			= "Nåværende passord";
 $lang['Collapse_Menu'] 				= "Skjul menyen";
 $lang['Full_Screen'] 				= "Full skjerm";
 $lang['Services'] 					= "Service oppdrag";
@@ -92,6 +92,8 @@ $lang['Internal_comment_added_successfully'] 			= "Intern kommentar ble lagt til
 $lang['Date'] 			= "Dato";
 $lang['By'] 			= "Av";
 $lang['Service_Status'] 			= "Status på service";
+$lang['Loading'] 			= "Laster...";
+$lang['Processing'] 			= "Behandling...";
 
 
 							

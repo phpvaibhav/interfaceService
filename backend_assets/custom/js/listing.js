@@ -25,6 +25,8 @@
             "sNext":    Next,
             "sPrevious": Previous
         },
+        "sLoadingRecords": Processing,
+        "sProcessing":    Processing,
 
               },
                initComplete: function () {
@@ -77,6 +79,8 @@
             "sNext":    Next,
             "sPrevious": Previous
         },
+         "sLoadingRecords": Processing,
+        "sProcessing":    Processing,
               },
                           initComplete: function () {
     $('.dataTables_filter input[type="search"]').css({ 'height': '32px'});

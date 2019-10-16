@@ -213,6 +213,8 @@
   var Please_enter_your_contact_number  = "<?= lang('Please_enter_your_contact_number');?>";
   var Please_enter_your_fault_description  = "<?= lang('Please_enter_your_fault_description');?>";
   var please_enter_your_password  = "<?= lang('please_enter_your_password');?>";
+  var Processing  = "<?= lang('Processing');?>";
+  var Loading  = "<?= lang('Loading');?>";
 </script>
  <script src="<?php echo $backend_assets; ?>custom/js/listing.js"></script>
  <script src="<?php echo $backend_assets; ?>custom/js/custom.js"></script>
