@@ -16,7 +16,7 @@ class Service extends Common_Back_Controller {
     public function index() { 
         
         $data['title'] =    ($_SESSION[ADMIN_USER_SESS_KEY]['userType']==1)? lang('Service_Information') :lang('My_Services');
-          $data['recordSet'] = array('<li class="sparks-info"><h5>'.lang('Report_PDF').'<span class="txt-color-blue"><a class="anchor-btn" href="'.base_url().'service/servicePdf" target="_blank" ><i class="fa fa-file-pdf-o"></i></a></span></h5></li>',);
+          $data['recordSet'] = array('<li class="sparks-info"><h5>'.lang('Service_PDF').'<span class="txt-color-blue"><a class="anchor-btn" href="'.base_url().'service/servicePdf" target="_blank" ><i class="fa fa-file-pdf-o"></i></a></span></h5></li>',);
         $this->load->admin_render('service', $data);
     } 
     public function add_service() { 

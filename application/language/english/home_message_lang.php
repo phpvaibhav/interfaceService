@@ -48,6 +48,7 @@ $lang['Email_id_does_not_exist'] 			= "Email id does not exist";
 
 $lang['Service_Information'] 				= "Service Information";
 $lang['Report_PDF'] 						= "Report PDF";
+$lang['Service_PDF'] 						= "Service PDF";
 
 $lang['Product_Name'] 						= "Product Name";
 $lang['Manufacture'] 						= "Manufacture";

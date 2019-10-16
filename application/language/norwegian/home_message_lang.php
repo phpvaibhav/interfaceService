@@ -46,6 +46,7 @@ $lang['Password_Change_successfully'] 			= "Endre passord";
 $lang['Email_id_does_not_exist'] 			= "E-post-id eksisterer ikke";
 $lang['Service_Information'] 				= "Service Informasjon";
 $lang['Report_PDF'] 						= "Rapportere PDF";
+$lang['Service_PDF'] 						= "Service PDF";
 
 $lang['Product_Name'] 						= "Produkt navn";
 $lang['Manufacture'] 						= "Produksjon";
