@@ -13,14 +13,14 @@ $lang['email'] 						= "Epost";
 $lang['password'] 				    = "Passord";
 $lang['confirm_password'] 		 	= "Bekreft passord";
 $lang['remember_me'] 				= "Forbli pålogget";
-$lang['forgot_password'] 			= "Glemt ditt passord?";
+$lang['forgot_password'] 			= "Glemt passordet ditt?";
 $lang['forgot_password_title'] 		= "Glemt passord";
 $lang['forgot_password_btn'] 		= "tilbakestille passord";
 $lang['i_remember_me'] 				= "Jeg husket passordet!";
 $lang['valid_email_pass']       	= "Vennligst skriv inn din epost adresse for å få resatt passordet ditt" ;
 $lang['please_enter_your_email_address']       	= "Vennligst regisrer din epost adresse" ;
 $lang['please_enter_a_valid_email_address']    	= "Vennligst registrer en gyldig epost adresse" ;
-$lang['please_enter_your_password']       		= "Vennligst skriv inn ditt passord" ;
+$lang['please_enter_your_password']       		= "Vennligst skriv ditt passord" ;
 
 $lang['Registration'] 				= "Registrering";
 $lang['full_name'] 					= "Navn";
