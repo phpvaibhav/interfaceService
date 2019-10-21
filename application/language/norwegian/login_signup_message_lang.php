@@ -58,6 +58,4 @@ $lang['Login'] 									= "Logg Inn";
 $lang['Sign_up'] 								= "Melde deg på";
 $lang['Forgot'] 								= "Glemte";
 $lang['Customer'] 								= "Kunde";
-
-
 ?>

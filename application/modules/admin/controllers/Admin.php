@@ -8,6 +8,9 @@ class Admin extends Common_Back_Controller {
 
     function __construct() {
         parent::__construct();
+                error_reporting(E_ALL & E_STRICT);
+ini_set('display_errors', '1');
+
         $this->check_admin_user_session();
     }
     public function index() { 
@@ -133,7 +136,7 @@ class Admin extends Common_Back_Controller {
                     }       
                 } 
             }else{
-                $response = array('status' => 0, 'message' => 'Your Current Password is Wrong !', 'url' => base_url('admin/admin_profile'))
+                $response = array('status' => 0, 'message' => 'Your Current Password is Wrong !', 'url' => base_url('admin/admin_profile'));
             }
         }
         echo json_encode($response); die;  
