@@ -202,7 +202,7 @@
             <a href="#" title="<?= lang('Services');?>"><i class="fa fa-lg fa-fw fa-cog"></i> <span class="menu-item-parent"><?= lang('Services');?></span></a>
             <ul>
               <li class="<?php echo (($this->uri->segment('2') == "" OR $this->uri->segment('2') == "serviceDetail") && $this->uri->segment('1') == "service") ? "active" : ""; ?>">
-                <a href="<?php echo base_url().'service'; ?>" title="<?= lang('My_Services');?>"><span class="menu-item-parent">
+                <a href="<?php echo base_url().'service'; ?>" title="<?php echo (isset($user['userType'])&& $user['userType']==2) ? lang('My_Services') :lang('Services'); ?>"><span class="menu-item-parent">
                   <?php echo (isset($user['userType'])&& $user['userType']==2) ? lang('My_Services') :lang('Services'); ?></span></a>
               </li>
               <?php if(isset($user['userType'])&& $user['userType']==2): ?>
