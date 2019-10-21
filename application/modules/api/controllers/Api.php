@@ -4,7 +4,6 @@ class Api extends Common_Service_Controller{
     
     public function __construct(){
         parent::__construct();
-  
         $this->load->model('api_model'); //load image model
     }
     // For Registration 
@@ -13,7 +12,6 @@ class Api extends Common_Service_Controller{
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]',
             array('is_unique' =>ResponseMessages::getStatusCodeMessage(117))
         );
-      
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]|max_length[20]');
         $this->form_validation->set_rules('contact', 'Contact Number', 'trim|required|min_length[10]|max_length[20]');
         $this->form_validation->set_rules('fullName', 'full Name', 'trim|required|min_length[2]');
@@ -34,13 +32,13 @@ class Api extends Common_Service_Controller{
                 $userData['email']              =   $email;
                 $userData['userType']           =   2;
                 $userData['contactNumber']      =   $this->post('contact');
-                $userData['shippingAddress']      =   $this->post('shippingAddress');
-                $userData['vatNumber']      =   $this->post('vatNumber');
+                $userData['shippingAddress']    =   $this->post('shippingAddress');
+                $userData['vatNumber']          =   $this->post('vatNumber');
                 $userData['invoiceDetail']      =   $this->post('invoiceDetail');
                 $userData['authToken']          =   $authtoken;
                 $userData['password']           =   password_hash($this->post('password'), PASSWORD_DEFAULT);
                 $userData['authToken']          =   $authtoken;
-                $userData['passToken']     =   $passToken;
+                $userData['passToken']          =   $passToken;
             //user info
             // profile pic upload
             $this->load->model('Image_model');

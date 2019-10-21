@@ -58,16 +58,16 @@
 
 		</div>
 <script type="text/javascript">
-	var email_req ="<?php echo lang('please_enter_your_email_address');  ?>";
-	var valid_email_req ="<?php echo lang('please_enter_a_valid_email_address');  ?>";
-		var please_enter_your_full_name  = "<?= lang('please_enter_your_full_name');?>";
-	var please_enter_your_email_address  = "<?= lang('please_enter_your_email_address');?>";
+	var email_req 							= "<?php echo lang('please_enter_your_email_address');  ?>";
+	var valid_email_req 					= "<?php echo lang('please_enter_a_valid_email_address');  ?>";
+		var please_enter_your_full_name  	= "<?= lang('please_enter_your_full_name');?>";
+	var please_enter_your_email_address  	= "<?= lang('please_enter_your_email_address');?>";
 	var please_enter_a_valid_email_address  = "<?= lang('please_enter_a_valid_email_address');?>";
-	var please_enter_password  = "<?= lang('please_enter_password');?>";
-	var please_enter_password_limit  = "<?= lang('please_enter_password_limit');?>";
-	var please_re_enter_your_password  = "<?= lang('please_re_enter_your_password');?>";
-	var please_re_enter_wrong_password  = "<?= lang('please_re_enter_wrong_password');?>";
-	var please_enter_your_contact_number  = "<?= lang('please_enter_your_contact_number');?>";
+	var please_enter_password  				= "<?= lang('please_enter_password');?>";
+	var please_enter_password_limit  		= "<?= lang('please_enter_password_limit');?>";
+	var please_re_enter_your_password  		= "<?= lang('please_re_enter_your_password');?>";
+	var please_re_enter_wrong_password  	= "<?= lang('please_re_enter_wrong_password');?>";
+	var please_enter_your_contact_number  	= "<?= lang('please_enter_your_contact_number');?>";
 	var please_enter_your_shipping_address  = "<?= lang('please_enter_your_shipping_address');?>";
-	var please_enter_your_vat_number  = "<?= lang('please_enter_your_vat_number');?>";
+	var please_enter_your_vat_number  		= "<?= lang('please_enter_your_vat_number');?>";
 </script>
