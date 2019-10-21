@@ -55,7 +55,7 @@
     <header id="header">
 
       <div id="logo-group">
-        <span id="logo"> <img src="<?php echo $backend_assets; ?>img/logo.png" alt="<?php echo SITE_NAME; ?>"> </span>
+        <span id="logo"><a href="<?php echo 'https://audiensservicepartner.com/'; ?>" ><img src="<?php echo $backend_assets; ?>img/logo.png" alt="<?php echo SITE_NAME; ?>"></a></span>
       </div>
     <?php  if($this->uri->segment('2') !='signup'): ?>
    <span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs"><?php echo lang('need_an_account'); ?></span> <a href="<?php echo base_url().'admin/signup'; ?>" class="btn btn-warning"><?php echo lang('create_account'); ?></a> </span> 
