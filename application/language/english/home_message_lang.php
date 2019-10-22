@@ -96,6 +96,7 @@ $lang['By'] 											= "By";
 $lang['Service_Status'] 								= "Service Status";
 $lang['Loading'] 										= "Loading...";
 $lang['Processing'] 									= "Processing...";
+$lang['View_user'] 										= "View user";
 
 
 

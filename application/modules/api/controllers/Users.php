@@ -41,7 +41,7 @@ class Users extends Common_Service_Controller{
              $action .= '<a href="'.$link.'" onclick="statusChangeuser(this);" data-message="'.lang('You_want_to_change_status').'" data-useid="'.encoding($serData->id).'"  class="on-default edit-row table_action" title="status" data-title="'.lang('Are_you_sure').'" data-yes="'.lang('Yes').'" data-no="'.lang('No').'" ><i class="fa fa-times" aria-hidden="true"></i></a>';
         }
         $userLink = base_url().'users/userDetail/'.encoding($serData->id);
-        $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$userLink.'"  class="on-default edit-row table_action" title="'.lang('Detail').'"><i class="fa fa-eye" aria-hidden="true"></i></a>';
+        $action .= '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'.$userLink.'"  class="on-default edit-row table_action" title="'.lang('View_user').'"><i class="fa fa-eye" aria-hidden="true"></i></a>';
 
         $row[] = $action;
         $data[] = $row;

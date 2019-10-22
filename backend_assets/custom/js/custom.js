@@ -1,6 +1,16 @@
 runAllForms();
   var Success = $('body').data('success-msg'); // Base url
   var Alert = $('body').data('alert-msg'); // Base url
+  function injectTrim(handler) {
+  return function (element, event) {
+    if (element.tagName === "TEXTAREA" || (element.tagName === "INPUT" 
+                                       && element.type !== "password")) {
+      element.value = $.trim(element.value);
+    }
+    return handler.call(this, element, event);
+  };
+ }
+
 //loader manage
 function preLoadshow(e){
   if(e){
@@ -95,7 +105,7 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
               required : password_req
             }
           },
-
+           onfocusout: injectTrim($.validator.defaults.onfocusout),
           // Do not change code below
           errorPlacement : function(error, element) {
             error.insertAfter(element.parent());
@@ -156,7 +166,7 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
               email : valid_email_req
             },
           },
-
+           onfocusout: injectTrim($.validator.defaults.onfocusout),
           // Do not change code below
           errorPlacement : function(error, element) {
             error.insertAfter(element.parent());
@@ -272,7 +282,7 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
               required : 'You must agree with Terms and Conditions'
             }*/
           },
-
+           onfocusout: injectTrim($.validator.defaults.onfocusout),
           // Ajax form submition
           submitHandler : function(form) {
             toastr.clear();
@@ -389,7 +399,7 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
              });
              return false; // required to block normal submit since you used ajax
           },
-
+           onfocusout: injectTrim($.validator.defaults.onfocusout),
           // Do not change code below
           errorPlacement : function(error, element) {
             error.insertAfter(element.parent());
@@ -439,6 +449,7 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
              return false; // required to block normal submit since you used ajax
           },
 */
+ onfocusout: injectTrim($.validator.defaults.onfocusout),
           // Do not change code below
           errorPlacement : function(error, element) {
             error.insertAfter(element.parent());
@@ -540,7 +551,7 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
              //~ });
             // return false; // required to block normal submit since you used ajax
          // },
-
+ onfocusout: injectTrim($.validator.defaults.onfocusout),
           // Do not change code below
           errorPlacement : function(error, element) {
             error.insertAfter(element.parent());
@@ -643,6 +654,7 @@ $(document).on('submit', "#smart-form-updateuser", function (event) {
 
         }
       },
+       onfocusout: injectTrim($.validator.defaults.onfocusout),
       // Do not change code below
           errorPlacement : function(error, element) {
             error.insertAfter(element.parent());
@@ -691,6 +703,7 @@ $("#commentForm").validate({
                required: "Please enter comment.",
         }
       },
+       onfocusout: injectTrim($.validator.defaults.onfocusout),
       // Do not change code below
           errorPlacement : function(error, element) {
             error.insertAfter(element.parent());
@@ -739,6 +752,7 @@ $("#internalcommentForm").validate({
                required: "Please enter notes.",
         }
       },
+      onfocusout: injectTrim($.validator.defaults.onfocusout),
       // Do not change code below
           errorPlacement : function(error, element) {
             error.insertAfter(element.parent());

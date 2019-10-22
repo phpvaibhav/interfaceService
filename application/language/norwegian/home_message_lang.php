@@ -4,25 +4,25 @@
  * norwegian language of home page
  */ 
 
-$lang['My_Profile'] 				= "Min profil";
-$lang['Change_password'] 			= "Bytt passord";
-$lang['Current_Password'] 			= "Passord";
-$lang['Collapse_Menu'] 				= "Kollaps meny";
-$lang['Full_Screen'] 				= "Full skjerm";
-$lang['Services'] 					= "Service oppdrag";
-$lang['My_Services'] 				= "Mine service oppdrag";
-$lang['Add_service'] 				= "Legg til en service";
-$lang['Users'] 						= "brukere";
-$lang['Clear_Local_Storage'] 		= "Slett lokal minne";
+$lang['My_Profile'] 						= "Min profil";
+$lang['Change_password'] 					= "Bytt passord";
+$lang['Current_Password'] 					= "Passord";
+$lang['Collapse_Menu'] 						= "Kollaps meny";
+$lang['Full_Screen'] 						= "Full skjerm";
+$lang['Services'] 							= "Service oppdrag";
+$lang['My_Services'] 						= "Mine service oppdrag";
+$lang['Add_service'] 						= "Legg til en service";
+$lang['Users'] 								= "brukere";
+$lang['Clear_Local_Storage'] 				= "Slett lokal minne";
 $lang['Warning_This_will_reset_all_your_widget_settings'] 	= "Advarsel! Dette vil tilbakestille alle widgetinnstillingene dine.";
-$lang['rest_all'] 					= "Ønsker du å RESETTE alle dine lagrede widgets og slett lokal minne?";
-$lang['Web_Application'] 			= "Webapplikasjon";
-$lang['Yes'] 						= "Ja";
-$lang['No'] 						= "Nei";
+$lang['rest_all'] 							= "Ønsker du å RESETTE alle dine lagrede widgets og slett lokal minne?";
+$lang['Web_Application'] 					= "Webapplikasjon";
+$lang['Yes'] 								= "Ja";
+$lang['No'] 								= "Nei";
 
-$lang['Active'] 					= "Aktiv";
-$lang['Inactive'] 					= "Inaktive";
-$lang['Update'] 					= "Oppdater";
+$lang['Active'] 							= "Aktiv";
+$lang['Inactive'] 							= "Inaktive";
+$lang['Update'] 							= "Oppdater";
 $lang['error_not_able_to_send_email'] 		= "Feil ved ikke å kunne sende e-post";
 $lang['this_email_does_not_exist'] 			= "Denne eposten eksisterer ikke";
 $lang['are_you_sure_you_want_to_logout'] 	= "Er du sikker på at du vil logge ut?";
@@ -87,13 +87,14 @@ $lang['Please_enter_your_product_series_number'] 		= "Vennligst skriv inn serien
 $lang['Please_select_your_product_date_of_purchase'] 	= "Vennligst registrer kjøpsdato";
 $lang['Please_enter_your_contact_number'] 				= "Vennligst skriv inn ditt telefonnummer";
 $lang['Please_enter_your_fault_description'] 			= "Vennligst beskriv oppdraget";
-$lang['comment_added_successfully'] 			= "Kommentar lagret";
+$lang['comment_added_successfully'] 					= "Kommentar lagret";
 $lang['Internal_comment_added_successfully'] 			= "Intern kommentar ble lagt til.";
-$lang['Date'] 			= "Dato";
-$lang['By'] 			= "Av";
-$lang['Service_Status'] 			= "Status på service";
-$lang['Loading'] 			= "Laster...";
-$lang['Processing'] 			= "Behandling...";
+$lang['Date'] 											= "Dato";
+$lang['By'] 											= "Av";
+$lang['Service_Status'] 								= "Status på service";
+$lang['Loading'] 										= "Laster...";
+$lang['Processing'] 									= "Behandling...";
+$lang['View_user'] 										= "Se bruker";
 
 
 ?>
