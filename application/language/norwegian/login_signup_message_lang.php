@@ -58,4 +58,6 @@ $lang['Login'] 									= "Logg Inn";
 $lang['Sign_up'] 								= "Melde deg på";
 $lang['Forgot'] 								= "Glemte";
 $lang['Customer'] 								= "Kunde";
+$lang['Please_enter_at_least_3_characters'] 								= "Vennligst bruk minst 3 tegn";
+$lang['Please_enter_no_more_than_20_characters'] 								= "Skriv inn ikke mer enn 20 tegn";
 ?>

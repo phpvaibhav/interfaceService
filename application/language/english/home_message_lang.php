@@ -97,7 +97,8 @@ $lang['Service_Status'] 								= "Service Status";
 $lang['Loading'] 										= "Loading...";
 $lang['Processing'] 									= "Processing...";
 $lang['View_user'] 										= "View user";
-
+$lang['Please_enter_comment'] 										= "Please enter comment";
+$lang['Please_enter_internal_comment'] 										= "Please enter internal note.";
 
 
 ?>

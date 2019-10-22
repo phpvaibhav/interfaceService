@@ -95,6 +95,7 @@ $lang['Service_Status'] 								= "Status på service";
 $lang['Loading'] 										= "Laster...";
 $lang['Processing'] 									= "Behandling...";
 $lang['View_user'] 										= "Se bruker";
-
+$lang['Please_enter_comment'] 										= "Skriv inn kommentar";
+$lang['Please_enter_internal_comment'] 										= "Skriv inn Intern kommentar.";
 
 ?>

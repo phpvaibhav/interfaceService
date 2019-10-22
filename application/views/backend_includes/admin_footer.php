@@ -215,6 +215,11 @@
   var please_enter_your_password  = "<?= lang('please_enter_your_password');?>";
   var Processing  = "<?= lang('Processing');?>";
   var Loading  = "<?= lang('Loading');?>";
+  var Please_enter_comment  = "<?= lang('Please_enter_comment');?>";
+  var Please_enter_internal_comment  = "<?= lang('Please_enter_internal_comment');?>";
+  var Please_enter_at_least_3_characters  = "<?= lang('Please_enter_at_least_3_characters');?>";
+  var Please_enter_no_more_than_20_characters  = "<?= lang('Please_enter_no_more_than_20_characters');?>";
+  var please_enter_your_password  = "<?= lang('please_enter_your_password');?>";
 </script>
  <script src="<?php echo $backend_assets; ?>custom/js/listing.js"></script>
  <script src="<?php echo $backend_assets; ?>custom/js/custom.js"></script>

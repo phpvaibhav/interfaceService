@@ -68,6 +68,9 @@
   var please_enter_your_password  = "<?= lang('please_enter_your_password');?>";
   var Processing  = "<?= lang('Processing');?>";
   var Loading  = "<?= lang('Loading');?>";
+    var Please_enter_at_least_3_characters  = "<?= lang('Please_enter_at_least_3_characters');?>";
+  var Please_enter_no_more_than_20_characters  = "<?= lang('Please_enter_no_more_than_20_characters');?>";
+  var please_enter_your_password  = "<?= lang('please_enter_your_password');?>";
 </script>
     <!-- MAIN APP JS FILE -->
     <script src="<?php echo $backend_assets; ?>js/app.min.js"></script>

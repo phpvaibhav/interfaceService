@@ -102,7 +102,10 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
               email : valid_email_req
             },
             password : {
-              required : password_req
+              required : password_req,
+                   minlength : Please_enter_at_least_3_characters,
+              maxlength : Please_enter_no_more_than_20_characters
+              
             }
           },
            onfocusout: injectTrim($.validator.defaults.onfocusout),
@@ -263,11 +266,14 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
             },
             password : {
               required : please_enter_password,
-              minlength: please_enter_password_limit
+                   minlength : Please_enter_at_least_3_characters,
+              maxlength : Please_enter_no_more_than_20_characters
             },
             passwordConfirm : {
               required : please_re_enter_your_password,
-              equalTo : please_re_enter_wrong_password
+              equalTo : please_re_enter_wrong_password,
+                   minlength : Please_enter_at_least_3_characters,
+              maxlength : Please_enter_no_more_than_20_characters
             }
           /*  ,firstname : {
               required : 'Please select your first name'
@@ -355,14 +361,20 @@ $(".alfaNumeric").on("keypress keyup blur",function (event) {
           messages : {
             
             password : {
-              required : please_enter_your_current_password
+              required : please_enter_your_current_password,
+              minlength : Please_enter_at_least_3_characters,
+              maxlength : Please_enter_no_more_than_20_characters
             },
             npassword : {
-              required : please_enter_your_new_password
+              required : please_enter_your_new_password,
+                 minlength : Please_enter_at_least_3_characters,
+              maxlength : Please_enter_no_more_than_20_characters
             },
             rnpassword : {
               required : please_re_enter_your_password,
-              equalTo : please_re_enter_wrong_password
+              equalTo : please_re_enter_wrong_password,
+                 minlength : Please_enter_at_least_3_characters,
+              maxlength : Please_enter_no_more_than_20_characters
             }
          
           },
@@ -630,26 +642,26 @@ $(document).on('submit', "#smart-form-updateuser", function (event) {
          rules: {
         password: {
           required: true,
-          minlength: 6,
-         // maxlength: 15,
+          minlength: 3,
+          maxlength: 20,
         },
         cpassword: {
            required: true,  
          minlength: 3,
-         //  maxlength: 15,
+          maxlength: 20,
          equalTo: "#password",
        }
       },
       messages: {
         password:{
                required: please_enter_your_password,
-               minlength: please_enter_password_limit,
-               maxlength: "Password should have Maxlength 15 characters.",
+     minlength : Please_enter_at_least_3_characters,
+              maxlength : Please_enter_no_more_than_20_characters
         }, 
         cpassword:{ 
           required: please_re_enter_your_password,
-          minlength: please_enter_password_limit,
-                maxlength: "Confirm password should have Maxlength 15 characters.",
+     minlength : Please_enter_at_least_3_characters,
+              maxlength : Please_enter_no_more_than_20_characters,
           equalTo: please_re_enter_wrong_password,
 
         }
@@ -700,7 +712,7 @@ $("#commentForm").validate({
       },
       messages: {
         comment:{
-               required: "Please enter comment.",
+               required: Please_enter_comment,
         }
       },
        onfocusout: injectTrim($.validator.defaults.onfocusout),
@@ -749,7 +761,7 @@ $("#internalcommentForm").validate({
       },
       messages: {
         notes:{
-               required: "Please enter notes.",
+               required: Please_enter_internal_comment,
         }
       },
       onfocusout: injectTrim($.validator.defaults.onfocusout),

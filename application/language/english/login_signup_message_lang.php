@@ -58,6 +58,8 @@ $lang['Login'] 									= "Login";
 $lang['Sign_up'] 								= "Sign up";
 $lang['Forgot'] 								= "Forgot";
 $lang['Customer'] 								= "Customer";
+$lang['Please_enter_at_least_3_characters'] 								= "Please enter at least 3 characters";
+$lang['Please_enter_no_more_than_20_characters'] 								= "Please enter no more than 20 characters";
 
 
 
